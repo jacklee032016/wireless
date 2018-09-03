@@ -1,0 +1,24 @@
+SWJTU(PHY%d): 11b rates: 1Mbps 2Mbps 5.5Mbps 11Mbps
+SWJTU(PHY%d): 11g rates: 1Mbps 2Mbps 5.5Mbps 11Mbps 6Mbps 9Mbps 12Mbps 18Mbps 24Mbps 36Mbps 48Mbps 54Mbps
+SWJTU(PHY%d): H/W encryption support: WEP AES AES_CCM TKIP
+SWJTU(PHY%d): mac 7.8 phy 4.5 radio 5.6
+SWJTU(PHY%d): Use hw queue 1 for WME_AC_BE traffic
+SWJTU(PHY%d): Use hw queue 0 for WME_AC_BK traffic
+SWJTU(PHY%d): Use hw queue 2 for WME_AC_VI traffic
+SWJTU(PHY%d): Use hw queue 3 for WME_AC_VO traffic
+SWJTU(PHY%d): Use hw queue 8 for CAB traffic
+SWJTU(PHY%d): Use hw queue 9 for beacons
+SWJTU_PHY : PHY%d: Atheros 5212: mem=0x4bfe0000, irq=25
+
+ASSIST WiFi PHY: 0.9.4.12 (EXPERIMENTAL)
+wifi0: 11b rates: 1Mbps 2Mbps 5.5Mbps 11Mbps
+wifi0: 11g rates: 1Mbps 2Mbps 5.5Mbps 11Mbps 6Mbps 9Mbps 12Mbps 18Mbps 24Mbps 36Mbps 48Mbps 54Mbps
+wifi0: mac 7.8 phy 4.5 radio 5.6
+wifi0: 802.11 address: 00:03:7f:1e:fa:d2
+wifi0: Use hw queue 0 for WME_AC_BE traffic
+wifi0: Use hw queue 1 for WME_AC_BK traffic
+wifi0: Use hw queue 2 for WME_AC_VI traffic
+wifi0: Use hw queue 3 for WME_AC_VO traffic
+wifi0: Atheros 5212: mem=0x4bfe0000, irq=25
+# 
+

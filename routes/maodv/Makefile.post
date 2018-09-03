@@ -1,0 +1,66 @@
+#
+# $Id: Makefile.post,v 1.1.1.1 2006/11/30 17:00:19 lizhijie Exp $
+#
+
+C_CFLAGS += $(INCLUDE_DIR) 
+CC_CFLAGS+= -Wno-deprecated
+
+K_CFLAGS+=  -nostdinc -iwithprefix include 
+
+# K_CFLAGS+= -DMODULE -D__KERNEL__ -DLINUX -DEXPORT_SYMTAB 
+# K_CFLAGS+= -Wall -I. -I$(KINCLUDES)
+
+# K_CFLAGS += -Wall -O3 -DMODULE -D__KERNEL__ -DLINUX  -DMESSAGES -DAODV_GATEWAY -DAODV_SIGNAL -I/usr/src/linux-2.4/include  
+
+# K_CFLAGS+= -Wall -O3 -I. -Wstrict-prototypes -fomit-frame-pointer $(MACRO_CFLAGS)
+# K_CFLAGS+= -DMODVERSIONS  -include $(KINCLUDES)/linux/modversions.h  
+# K_CFLAGS+= -I$(KINCLUDES)
+# K_CFLAGS+= -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+
+KOBJS += $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(KSRC))) $(EXTRA_OBJS)
+
+OBJS = $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+all:$(BIN_DIR) $(OBJ_DIR) $(TARGET_LIB) $(LOCAL_ALL) $(KERNEL_LIB)
+
+$(OBJ_DIR):
+	-if [ -d $(OBJ_DIR) ] ; then : ; else $(MKDIR) $(OBJ_DIR); fi
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJ_DIR)/$$subdir ) ; done
+endif
+
+$(BIN_DIR):
+	-if [ -d $(BIN_DIR) ] ; then : ; else $(MKDIR) $(BIN_DIR)/sbin; $(MKDIR) $(MODULES_DIR); fi
+#ifdef CODE_SUBDIRS
+#	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(BIN_DIR)/$$subdir ) ; done
+#endif
+
+clean:$(LOCAL_CLEAN)
+	-if [ -d $(BIN_DIR) ] ; then $(RM) $(BIN_DIR) ; fi
+	-if [ -d $(OBJ_DIR) ] ; then $(RM) $(OBJ_DIR) ; fi
+
+$(TARGET_LIB):$(OBJS)
+#	$(AR) $(ARFLAGS) $@.a $^ 
+#	$(RANLIB) $@.a
+	$(CC) -Wl,-shared -o  $@.so $^ $(LIB_LDFLAGS)
+
+
+$(KERNEL_LIB): $(KOBJS) 
+	$(LD) $(K_LDFLAGS) $^ -o $@
+#	$(MOVE) $(KERNEL_LIB) $(BIN_DIR)/
+
+
+$(OBJ_DIR)/%.o:%.cxx
+	$(CXX) $(CXXFLAGS) $(C_CFLAGS) $(CC_CFLAGS) -c  $< -o $(OUTPUT_FLAG)$@ 
+
+.o.cxx :
+	$(CXX) $(C_CFLAGS) $(CC_CFLAGS) -g $(CFLAGS) -c $<
+
+ifeq ($(KERNEL),yes)
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(K_CFLAGS) -c $< -o $(OUTPUT_FLAG) $@ 
+else
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(CFLAGS) $(C_CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+endif
+	

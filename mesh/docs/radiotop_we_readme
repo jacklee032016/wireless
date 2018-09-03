@@ -1,0 +1,1824 @@
+ieee80211_newstate: SCAN -> SCAN
+ieee80211_ref_node (ieee80211_send_mgmt:144) c3d2cc00<00:03:7f:1e:fa:d2> refcnt 2
+[ff:ff:ff:ff:ff:ff] send probe_req on channel 1
+NODS 00:03:7f:1e:fa:d2->ff:ff:ff:ff:ff:ffNODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0ba 292d 18ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2fa1 6ea4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+[00:15:e9:42:5e:3e] new beacon on chan 1 (bss chan 1) "mesh-1"
+[00:15:e9:42:5e:3e] caps 0x402 bintval 100 erp 0x4
+_ieee80211_setup_node c380f800<00:15:e9:42:5e:3e> in scan table
+(ff:ff:ff:ff:ff:ff) probe_req 1M
+ 4000 0000 ffff ffff ffff 0003 7f1e fad2 ffff ffff ffff 0000 0006 6d65 7368 2d31 0108 0204 0b16 0c12 1824 3204 3048 606c
+SWJTU_PHY : __phy_ioctlNODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0ba c5be 19ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2378 cfab
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00bb 744d 1bce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fda4 b18f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+ieee80211_cancel_scan: end active scan
+        macaddr          bssid         chan  rssi rate flag  wep  essid
+ + 00:15:e9:42:5e:3e 02:03:7f:1e:fa:d2    1   +41 54M  ibss   no  "mesh-1"
+__ieee80211_free_node c3d2cc00<00:03:7f:1e:fa:d2> in <gone> table
+ieee80211_wme_initparams: WME_AC_BE chan [acm 0 aifsn 3 log2(cwmin) 4 log2(cwmax) 10 txpoLimit 0]
+ieee80211_wme_initparams: WME_AC_BE  bss [acm 0 aifsn 3 log2(cwmin) 4 log2(cwmax) 10 txpoLimit 0]
+ieee80211_wme_initparams: WME_AC_BK chan [acm 0 aifsn 7 log2(cwmin) 4 log2(cwmax) 10 txpoLimit 0]
+ieee80211_wme_initparams: WME_AC_BK  bss [acm 0 aifsn 7 log2(cwmin) 4 log2(cwmax) 10 txpoLimit 0]
+ieee80211_wme_initparams: WME_AC_VI chan [acm 0 aifsn 2 log2(cwmin) 3 log2(cwmax) 4 txpoLimit 94]
+ieee80211_wme_initparams: WME_AC_VI  bss [acm 0 aifsn 2 log2(cwmin) 3 log2(cwmax) 4 txpoLimit 94]
+ieee80211_wme_initparams: WME_AC_VO chan [acm 0 aifsn 2 log2(cwmin) 2 log2(cwmax) 3 txpoLimit 47]
+ieee80211_wme_initparams: WME_AC_VO  bss [acm 0 aifsn 2 log2(cwmin) 2 log2(cwmax) 3 txpoLimit 47]
+ieee80211_wme_updateparams_locked: WME_AC_BE [acm 0 aifsn 2 log2(cwmin) 4 log2(cwmax) 10 txpoLimit 64]
+ieee80211_wme_updateparams_locked: WME params updated, cap_info 0x0
+ieee80211_newstate: SCAN -> RUN
+SWJTU(PHY%d): synchronized with 02:03:7f:1e:fa:d2 ssid "mesh-1" channel 1 start 1Mb
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30bb abdd 1cce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c9db 64c7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+[00:15:e9:42:5e:3e] new beacon on chan 1 (bss chan 1) "mesh-1"
+[00:15:e9:42:5e:3e] caps 0x402 bintval 100 erp 0x4
+[00:15:e9:42:5e:3e] creating adhoc node from beacon/probe response
+_ieee80211_setup_node c3d2cc00<00:15:e9:42:5e:3e> in neighbor table
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60bb 116f 1ece 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3bd3 37df
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90bb f0fd 1fce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6d07 34b9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0bb c98e 21ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f4b9 9689
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0bb 7121 23ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bb76 5abc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20bc bead 24ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8441 5208
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50bc 9d3f 26ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f572 904f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80bc 16ce 27ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 10ba 183f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0bc 2a5e 29ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 be4c 6bd7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0bc 50ee 2ace 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c2b4 6300
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10bd 697f 2cce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5152 d746
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40bd 110e 2ece 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2c1c d415
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70bd 589e 2fce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6d19 a3ba
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0bd 9c2e 31ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d10a 31d9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0bd 3ec1 32ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8534 056b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00be 144f 34ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 566d 97cc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30be d7de 35ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 41b3 8026
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60be 116f 37ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3f11 932d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90be 66ff 38ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 942c 5fba
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0be 098f 3ace 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 292e 9a7f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0be a81f 3cce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 408a 7fce
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +40
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff a03b 0000 0104 8284 8b96 0964 8e5a
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 40
+[00:0a:eb:a3:41:7f] creating adhoc node from probe request
+_ieee80211_setup_node c380a000<00:0a:eb:a3:41:7f> in neighbor table
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 2
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 0000 ed4b 3dce 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff b03b 0000 0104 8284 8b96 e1e5 207d
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 4
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 1000 3228 3ece 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff c03b 0000 0104 8284 8b96 7960 698b
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 5
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 2000 7a04 3fce 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff d03b 0000 0104 8284 8b96 91e1 c7ac
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 6
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 3000 97e0 3fce 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50bf b3ae 3dce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6530 ad2a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80bf 0340 3fce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1b0d 147d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +36
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 303d 0000 0104 8284 8b96 6a95 3fe8
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 36
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 7
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 4000 df9f 41ce 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +35
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 503d 0000 0104 8284 8b96 1a91 d839
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 35
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 8
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 5000 157c 42ce 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0bf 14d6 40ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dc29 7c46
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00c0 075f 42ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 61ca f9ae
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30c0 afef 43ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 33ca 3a8d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60c0 1e7f 45ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a34f f91a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90c0 5a0f 47ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8ef3 ffec
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0c0 109f 48ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 aa8f 6902
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0c0 452f 4ace 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f29c 5b5d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20c1 27bf 4bce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0f2f 14c4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50c1 6a50 4dce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0f04 ef98
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80c1 63df 4ece 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 495b 78dc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0c1 5271 50ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 df4b 0ec1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0c1 e300 52ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1ed0 44dc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10c2 bf8f 53ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0eb9 d74e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40c2 9920 55ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 272d 3c37
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70c2 24b0 56ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8748 f5f9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0c2 4942 58ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bf15 7eb1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0c2 efd0 59ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d089 9182
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00c3 c85f 5bce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 892c f7ef
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30c3 43f1 5cce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c858 e813
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60c3 7280 5ece 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2fd7 695f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90c3 cc10 60ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3e94 8426
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0c3 82a0 61ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9692 1ce9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0c3 0431 63ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 aa7d 080e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20c4 07c1 64ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 09fe 9dfd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +42
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50c4 0852 66ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0a1b fa8c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 42
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80c4 3fe0 67ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6e6a 2e71
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0c4 9470 69ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6aec c6fd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0c4 b600 6bce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4047 d603
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10c5 9692 6cce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 990c bbf6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40c5 3521 6ece 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9ac7 44eb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70c5 1ab3 6fce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1307 85d2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0c5 f540 71ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 84dd d058
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0c5 5bd1 72ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a09f 0a48
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00c6 bf60 74ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 64b6 6f8f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +31
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30c6 32f1 75ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 516d f7de
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 31
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +32
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60c6 0382 77ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6fb4 2b0e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 32
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +31
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90c6 5411 79ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1a89 ce75
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 31
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +31
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0c6 c7a1 7ace 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f3e2 4515
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 31
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +32
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0c6 dd33 7cce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d79e 55c9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 32
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +33
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20c7 86c1 7dce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c31d 1c07
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 33
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50c7 a852 7fce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7a25 78f0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80c7 80e1 80ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ee48 d56b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0c7 d271 82ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 92d9 73e3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0c7 7002 84ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 83f9 c3db
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +33
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10c8 9291 85ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fcc8 38a6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 33
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40c8 9f21 87ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 54a0 67bf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70c8 36b4 88ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 abaa 69a6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0c8 2042 8ace 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1868 3fa7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0c8 40d4 8bce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9a9e f1d5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00c9 0663 8dce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9739 62e8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30c9 cff2 8ece 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7870 18e1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60c9 6b83 90ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2910 11db
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90c9 4712 92ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fd4f bf96
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0c9 aaa2 93ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 efb7 7c71
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0c9 2933 95ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c54a 5665
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +34
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20ca 39c2 96ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f627 67f2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 34
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50ca 9752 98ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2551 9349
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +35
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80ca b0e2 99ce 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 acd6 47b9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 35
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) be ffff 0015 e942 5e3e 0203 7f1e fad2 10ea 004d 9dcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7278 703f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40ea 25e6 9ecf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f732 82a7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70ea 206d a0cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d576 a080
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0ea 4efd a1cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5a76 6f1c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0ea 4d8d a3cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4e82 85bf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00eb 001d a5cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 16ca 7be5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30eb 51af a6cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f8df 6b28
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60eb 6f3f a8cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bd9f f088
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90eb 67cd a9cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 da13 dbcd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0eb 125e abcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6fff 0a90
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0eb 21ef accf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 808e cde4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20ec 317e aecf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a03b eab3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50ec 1e0e b0cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b099 b368
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80ec 5e9e b1cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2750 dc9e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0ec ad2f b3cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1766 bd11
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0ec 6ebe b4cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 81a8 21b0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10ed 424e b6cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d81f cba3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40ed aadf b7cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 847a 99cf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70ed fa6d b9cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 42e8 f875
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0ed 1200 bbcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a54d 88f9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0ed f18d bccf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 841e c6bc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00ee d41e becf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2bc3 203a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30ee 0aaf bfcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 10d8 c321
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60ee cd3e c1cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d22f f004
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90ee 4cce c2cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 07da 7aef
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0ee 7b5e c4cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9a14 b6f2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0ee 9fee c5cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cc26 6995
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20ef a97e c7cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bd9f b1ef
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50ef 410f c9cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8fc3 4d85
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80ef 9d9e cacf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 955e 8b28
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0ef a82f cccf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3348 a0ad
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0ef b8bf cdcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 11ad 733b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10f0 dd4e cfcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3e30 e5e4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40f0 e5de d0cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d19b 827a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70f0 4a6f d2cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d13f a220
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0f0 1fff d3cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 eca5 0e1c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0f0 2090 d5cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f5c9 00ea
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00f1 3c20 d7cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0d97 b6ad
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30f1 33b0 d8cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6913 2087
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60f1 b93f dacf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4cca 0ae1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90f1 9ccf dbcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5f75 86d2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0f1 495f ddcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f854 3db0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0f1 5af0 decf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 758d 2ccf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20f2 847f e0cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 faba b6fe
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50f2 ed0f e2cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e865 4e3b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80f2 d39f e3cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 404f 391e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0f2 d730 e5cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ab2b f0d6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0f2 a0bf e6cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4091 7b98
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10f3 b14f e8cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 59c7 a6d2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40f3 64e1 e9cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8f06 e04f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70f3 6470 ebcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bea2 fb22
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0f3 0500 edcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 28c8 f005
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0f3 5f91 eecf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 299a c420
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00f4 4220 f0cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2be2 cafa
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30f4 61b1 f1cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 20e4 3990
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60f4 5940 f3cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7f3c cbfe
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90f4 80d0 f4cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bb19 5cd8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0f4 dc61 f6cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ebe8 e4a4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0f4 5af0 f7cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 714f 883d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20f5 3b81 f9cf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9fc3 5c5a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50f5 de10 fbcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 654f bf80
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80f5 2fa1 fccf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c610 ba1c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0f5 0532 fecf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3b43 0ba3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0f5 8fc0 ffcf 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4a68 854a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10f6 7651 01d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cd16 1312
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40f6 a7e1 02d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 11c0 eea5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70f6 7871 04d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4787 13c7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0f6 0e01 06d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d568 e87d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0f6 a091 07d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7972 f49a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00f7 f720 09d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a8d6 55bc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30f7 18b1 0ad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4586 2197
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+__ieee80211_timeout_stations: neighbor scangen 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60f7 8441 0cd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dcad b37e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90f7 27d2 0dd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f3ec 506c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0f7 7a62 0fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7cae b7cc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0f7 47f1 10d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5509 fe81
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +38
+ 4000 0000 ffff ffff ffff 0015 e942 5e3e ffff ffff ffff 20f8 0000 0108 8284 8b96 1224 486c 3204 8c98 b060 74d0 78b7
+SWJTU(PHY%d): received probe_req from 00:15:e9:42:5e:3e rssi 38
+[00:15:e9:42:5e:3e] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c3d2cc00<00:15:e9:42:5e:3e> refcnt 3
+[00:15:e9:42:5e:3e] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:15:e9:42:5e:3e(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 0015 e942 5e3e 0003 7f1e fad2 0203 7f1e fad2 0000 82e1 12d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0108 0204 0b0c 1216 1824 0301 0106 0200 0032 0430 4860 6c2a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30f8 5692 12d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0c93 e81d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60f8 bb1a 14d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4576 407a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0fb 15a2 2ed0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 77bc daef
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0fb 0b32 30d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 35b7 e0ce
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20fc 32c2 31d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fba4 2f1e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50fc 6153 33d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1185 5426
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80fc 7ee2 34d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9f8d dfa9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b0fc 8c72 36d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ec4e 7889
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0fc bd02 38d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9ecd ff44
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10fd a993 39d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8ee7 693e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40fd 7b22 3bd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c98d 7080
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70fd 79b2 3cd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 78ef e633
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a0fd d242 3ed0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5e01 4a67
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d0fd 2fd4 3fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4a60 22c6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00fe 3263 41d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3eee dfd2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30fe c0f2 42d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 633d c67b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +42
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff e043 0000 0104 8284 8b96 6402 4f8f
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 42
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 3
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 2001 01f4 43d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff f043 0000 0104 8284 8b96 8c83 e1a8
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 4
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 3001 09d0 44d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 0044 0000 0104 8284 8b96 dc62 ccdc
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 5
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 4001 41ac 45d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 1044 0000 0104 8284 8b96 34e3 62fb
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 6
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 5001 4488 46d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90fe 6385 44d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0f6b f7dc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0fe eb18 46d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9b70 dfe0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00ff d9b5 47d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c91f 3abb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30ff 0233 49d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a7ab fa31
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60ff 2bc4 4ad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 178d 22e4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90ff 3453 4cd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c984 7796
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0ff 66e3 4dd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 429a 4ba4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0ff b373 4fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a0db 2bd9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 2000 5b03 51d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 79d7 3cd0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5000 2996 52d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b8b8 a7a7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8000 9324 54d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5057 50ce
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b000 c3b4 55d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 acb9 1dc7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e000 c443 57d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 666e 4d52
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 1001 d8d3 58d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3de8 23b5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 4001 0064 5ad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6c98 91c3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 7001 edf3 5bd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4972 b03c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a001 2c84 5dd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b69f ba6f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d001 c713 5fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5761 a559
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 0002 faa4 60d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 66ae 1a14
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 3002 f933 62d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c85b cd86
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 6002 3fc4 63d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 02c1 026b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 9002 6d54 65d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2db4 82fe
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c002 d9e5 66d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1975 5860
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f002 3d74 68d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e045 608b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 2003 9304 6ad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0c4f 3ff8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5003 5094 6bd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1eba 3cdd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8003 7625 6dd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6627 6f27
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b003 f3b4 6ed0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8d5c 096a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +36
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e003 ad44 70d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b597 0640
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 36
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 1004 35d6 71d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1e52 0e94
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 4004 e064 73d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7482 d1b1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 7004 1cf5 74d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 903f 0223
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a004 1885 76d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2a8b 1826
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d004 9716 78d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d65e 2424
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 0005 03a5 79d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 21f2 443b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 3005 3035 7bd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f434 041d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 6005 08c5 7cd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0d1d e852
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 9005 e755 7ed0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1558 a445
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c005 91e5 7fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ba68 05aa
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f005 e875 81d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ae33 dcff
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 2006 ac05 83d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a810 a869
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5006 5095 84d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4986 6f34
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8006 b125 86d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7888 2918
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b006 a9b5 87d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8d3c 2f71
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e006 5b46 89d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dbef 036f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 1007 ced6 8ad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f612 51cc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 4007 ba65 8cd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c4c2 7035
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 7007 d6f5 8dd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3272 5338
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a007 0b86 8fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 95cd 96dd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d007 7016 91d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3afa 9f1a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 0008 97a6 92d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 92f2 01ff
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 3008 3336 94d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 65a5 7a15
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 6008 0dc8 95d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 76ee d21e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 9008 2a56 97d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cc49 6e5b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c008 3de7 98d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9b52 7fcf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f008 3577 9ad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fc0e 5c49
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 2009 8806 9cd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 55c1 3220
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5009 7096 9dd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f5ae 52a5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8009 cb27 9fd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9345 0724
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b009 74b8 a0d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6924 6b7d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e009 8c47 a2d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8ece c709
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 100a 9ed6 a3d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7fad 677a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 400a a066 a5d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f76e 5523
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 700a e5f6 a6d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 65a3 8bb4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a00a 5587 a8d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7c81 9c2d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d00a d118 aad0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a2f6 e93a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 000b 31a7 abd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 02a4 81be
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 300b 2f37 add0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f2e6 9bda
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 600b 39c8 aed0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5a63 9197
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 900b 7558 b0d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c270 0645
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c00b cfe7 b1d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8ee2 967f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f00b 7878 b3d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b1dc acec
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 200c 7f07 b5d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8d97 b4c4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 500c 4797 b6d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dc16 aa6c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 800c a929 b8d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1b84 afed
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b00c f8b7 b9d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f95d 5bf8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e00c cc47 bbd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fd15 c659
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 100d d1d7 bcd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 64cd 514b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 400d 3e69 bed0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7be6 094e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 700d f3f8 bfd0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5db7 7437
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a00d d287 c1d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 22ba ac72
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d00d 5018 c3d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d792 1dbe
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 000e 99a8 c4d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 90ce 3c1a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 300e ab38 c6d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d693 b543
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 600e f8c8 c7d0 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f69b 72e9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff a046 0000 0104 8284 8b96 8b40 625b
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 3
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 6001 c28e dcd0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +40
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff b046 0000 0104 8284 8b96 63c1 cc7c
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 40
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 4
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 7001 076b ddd0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff c046 0000 0104 8284 8b96 fb44 858a
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 5
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 8001 1147 ded0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +39
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff d046 0000 0104 8284 8b96 13c5 2bad
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 39
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 6
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 9001 3723 dfd0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +36
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 3048 0000 0104 8284 8b96 f013 0b52
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 36
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 7
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 a001 c7ff dfd0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +36
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 4048 0000 0104 8284 8b96 6896 42a4
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 36
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 8
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 b001 b9db e0d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +24
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 5049 0000 0104 8284 8b96 c303 9794
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 24
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 5
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 c001 13d0 e1d0 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 900e 0501 0000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 65dc 3cb9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c00e a990 0100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 275b dcd9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f00e 2321 0300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 904a a821
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 200f e3b0 0400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4425 13b0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 500f 2141 0600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8be0 9ca3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 800f 1fd1 0700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 23ca eb86
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b00f 9d60 0900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 572f a114
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e00f aef0 0a00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2d50 b2af
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1010 d380 0c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d968 f5b7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4010 ba11 0e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 96ca dd8b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7010 1fa1 0f00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 40e9 2ebb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a010 dc31 1100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d878 280f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d010 9fc1 1200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8c22 1bbb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0011 1c51 1400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d07b a10b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3011 5be1 1500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3cb7 2544
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6011 0171 1700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9777 5633
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9011 4201 1900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 db2b cd43
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c011 8b91 1a00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b5cb 5a5e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f011 e021 1c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4950 3552
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2012 a2b1 1d00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 57b3 42e0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5012 9841 1f00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e6f6 4c09
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8012 bfd1 2000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8af0 8176
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b012 4162 2200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e7b3 8d76
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e012 c6f1 2300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fa58 0ebb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1013 1c84 2500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a6b6 709f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4013 1512 2700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b50d 77ae
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+__ieee80211_timeout_stations: neighbor scangen 54
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7013 2fa2 2800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ceda 71c4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a013 4e33 2a00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 09ae f369
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d013 b7c1 2b00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 47c7 ac9b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0014 8456 2d00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5984 2d62
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3014 b6e2 2e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 120c de81
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6014 aa72 3000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bbb1 0ce8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9014 1102 3200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1c61 10e3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c014 8d92 3300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0f28 f148
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f014 9522 3500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4873 b684
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2015 aeb2 3600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dfd1 76c7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5015 f242 3800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a623 0306
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8015 97d2 3900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 865f 3852
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b015 c262 3b00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 de4c 0a0d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e015 12f3 3c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c98e 91bd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1016 da84 3e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1c56 2e11
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4016 1815 4000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4052 836f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7016 a8a2 4100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5af7 b349
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a016 2333 4300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bdbc e8d3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d016 06c3 4400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7094 90c5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0017 9353 4600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bbd3 1397
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3017 afe3 4700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f60f 1150
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6017 3d73 4900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 aba5 7234
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9017 1203 4b00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 13a9 afdb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c017 ed95 4c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e9ec 5da2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f017 e726 4e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a1bf bf97
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2018 25b4 4f00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3f62 e16b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5018 6644 5100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 33a8 7a18
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8018 add3 5200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8fac 7aff
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b018 6863 5400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4dea 7ec8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e018 b7f3 5500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f885 20cb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1019 2784 5700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dab1 7b44
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4019 c913 5900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f81a 93d0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7019 0da4 5a00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 25cb d6c6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a019 5b34 5c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8354 f8ac
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d019 53c4 5d00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 af88 8aac
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 001a 3955 5f00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 689d 7772
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 301a a4e4 6000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8c67 ab3d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 601a 1474 6200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0798 017d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 901a f703 6400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7386 abf3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c01a 0794 6500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2b6e 9c39
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f01a 5926 6700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0557 0732
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 201b 54b5 6800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e816 cfdf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 501b 7644 6a00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3b0b a44c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 801b ccd5 6b00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f475 d9bf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b01b 9364 6d00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5448 e05c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e01b c7f4 6e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ac3f d192
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 101c dd85 7000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9b90 0dc5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 401c bd14 7200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5d79 42ce
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 701c 52a5 7300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e81f ffc2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a01c 5535 7500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fa31 a06e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d01c 65c6 7600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 80d5 7025
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 001d cd56 7800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0b73 c42e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 301d 0be7 7900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1e18 d4ec
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 601d 8775 7b00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 46ef 4d34
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 901d 6305 7d00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ece0 eac2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c01d 0d97 7e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ecc0 2c4f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f01d 0c26 8000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3c49 26c2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 201e 9cb7 8100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 498b 27c4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 501e 5d45 8300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a69c 3968
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 801e 86d5 8400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c00c c46a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b01e a265 8600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 05e8 4d0a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e01e bef5 8700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 30b5 67f0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 101f 8985 8900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1ae6 a08d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 401f 8715 8b00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9b64 3c67
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 701f c0a7 8c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e26f 1548
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a01f 9736 8e00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 13a2 c456
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d01f f5c5 8f00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ac2b 6f0f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0020 9756 9100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d297 3008
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3020 abe6 9200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5b3b 629b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6020 2676 9400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c1e0 cf08
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9020 ff06 9600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7acb 6f2d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c020 9196 9700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 67cd a468
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f020 4c27 9900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9616 f5af
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2021 adb8 9a00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fde9 9d73
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5021 f346 9c00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7e45 3ba4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8021 f3d7 9d00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b62e 27d9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b021 7469 9f00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4498 85f2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e021 d9f6 a000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 61ef 5c72
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1022 a486 a200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 77e3 2160
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4022 d616 a400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6754 960e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7022 cfa7 a500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d115 56c8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +37
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a022 2537 a700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d321 7d5f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 37
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d022 c9c6 a800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bf31 ea2e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0023 ce58 aa00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cd59 1c20
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 6049 0000 0104 8284 8b96 fb81 64fc
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 3
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 d001 43ad 93d1 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +40
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 7049 0000 0104 8284 8b96 1300 cadb
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 40
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 4
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 e001 6d89 94d1 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +39
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 8049 0000 0104 8284 8b96 8a8c 86cb
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 39
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 5
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 f001 6865 95d1 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 9049 0000 0104 8284 8b96 620d 28ec
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 6
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 0002 6241 96d1 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7023 dfe8 ab00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 64e3 6661
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a023 4b77 ad00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1051 134d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d023 5a07 af00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1632 3780
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0024 7898 b000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d86a cce4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +26
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff e04b 0000 0104 8284 8b96 7ca0 9734
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 26
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 3
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 1002 0220 99d1 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3024 082a b200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ee9a f785
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6024 b6b7 b300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ea70 f474
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9024 6d47 b500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ce91 7313
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c024 8cd9 b600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1e4b f0dc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f024 6d67 b800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 244a 29df
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2025 3ef8 b900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9600 de91
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5025 e188 bb00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9472 beb6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8025 b417 bd00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 46c5 2c9c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b025 d6a7 be00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d9cc ac25
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e025 4739 c000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d6ca 05a2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1026 b7c7 c100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7809 9ffa
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4026 6158 c300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 23e1 3870
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7026 07e8 c400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3961 4f45
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a026 1a7a c600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 72bf 8dfb
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d026 6308 c800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 54b2 e511
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0027 1a98 c900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 32dd 03d1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3027 3f28 cb00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 64a2 43ce
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6027 66b9 cc00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dc3f 7418
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9027 ad48 ce00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 08b7 98e5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c027 a3d8 cf00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2f7d 7c71
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f027 9d68 d100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d876 15da
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2028 a6f9 d200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b696 0e6b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5028 dc88 d400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e18c c7b4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8028 8718 d600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4bd1 7965
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b028 16a9 d700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c154 dcba
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e028 0739 d900 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0f46 2e0f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1029 68cb da00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4bb9 0e02
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4029 e958 dc00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 53a4 91c2
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 7029 e0e8 dd00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9d6d 9a36
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a029 627a df00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6613 6da4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d029 3809 e100 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f44f 431e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 002a 5b99 e200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9401 677e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 302a ef29 e400 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cbb0 d876
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 602a 96b9 e500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5ad2 4306
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 902a 4b4a e700 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 48f3 6b2d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c02a cada e800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f66d 2772
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f02a 986a ea00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 16ba 1889
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 202b 0bfa eb00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 50ea 277e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 502b 5c8a ed00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e6bd 82e8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 802b fe19 ef00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 78ad 2920
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b02b 49ac f000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fd42 9987
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e02b 713a f200 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6084 c0a1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 102c a6cb f300 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4b6a ee1a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 402c d059 f500 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8fe3 53cc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 702c b0ea f600 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a3a3 8bb5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a02c 3f7a f800 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 dc8c 818a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d02c 9f0a fa00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7286 3001
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 002d 179c fb00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 85f7 30d0
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 302d 412a fd00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ca54 6ed8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 602d 39ba fe00 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0cdd 6c83
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 902d 554b 0001 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7ac5 ded9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c02d 62da 0101 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 858a 5cb1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f02d 086b 0301 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2e43 ccc9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 202e e3fb 0401 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 fa28 2d18
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 502e cb8a 0601 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 24ce 6f29
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 802e 621b 0801 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 15d0 fd97
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b02e 0dac 0901 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ac5f 1db5
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e02e 673b 0b01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7cac f976
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 102f a2cc 0c01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3c84 188c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 402f d05a 0e01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8e2f 9935
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 702f 75eb 0f01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1424 fca6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 a02f e77a 1101 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 742c 1d77
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 d02f 170c 1301 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d7f1 823a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 0030 4a9d 1401 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 35ca f708
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 3030 432b 1601 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 77b6 12fd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 6030 babb 1701 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c0c0 42dc
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 9030 854b 1901 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a454 4695
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c030 7add 1a01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d6f0 1444
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f030 2a6c 1c01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d4d9 8e4b
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+__ieee80211_timeout_stations: neighbor scangen 71
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2031 e8fb 1d01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 40ed c0a6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5031 ac8b 1f01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ff57 c289
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8031 fa1b 2101 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6c9e 9ce3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b031 d6ab 2201 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d192 93e1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e031 683c 2401 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 85d6 f346
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 204c 0000 0104 8284 8b96 14c3 4928
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 3
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 2002 61c1 0dd2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 304c 0000 0104 8284 8b96 fc42 e70f
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 4
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 3002 d89d 0ed2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +40
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 404c 0000 0104 8284 8b96 64c7 aef9
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 40
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 5
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 4002 187a 0fd2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +41
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff 504c 0000 0104 8284 8b96 8c46 00de
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 41
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 6
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 5002 2456 10d2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5032 88cc 2501 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 db1a c680
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8032 f95c 2701 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 64e6 8f1f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +36
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff a04d 0000 0104 8284 8b96 56de 37d9
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 36
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 7
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 6002 8515 12d2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 1M +36
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff b04d 0000 0104 8284 8b96 be5f 99fe
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 36
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 8
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 7002 acf1 12d2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:0a:eb:a3:41:7f->ff:ff:ff:ff:ff:ff(ff:ff:ff:ff:ff:ff) probe_req 2M +36
+ 4000 0000 ffff ffff ffff 000a eba3 417f ffff ffff ffff c04d 0000 0104 8284 8b96 26da d008
+SWJTU(PHY%d): received probe_req from 00:0a:eb:a3:41:7f rssi 36
+[00:0a:eb:a3:41:7f] recv probe req
+ieee80211_ref_node (ieee80211_send_mgmt:144) c380a000<00:0a:eb:a3:41:7f> refcnt 9
+[00:0a:eb:a3:41:7f] send probe_resp on channel 1
+NODS 00:03:7f:1e:fa:d2->00:0a:eb:a3:41:7f(02:03:7f:1e:fa:d2) probe_resp 1M
+ 5000 3a01 000a eba3 417f 0003 7f1e fad2 0203 7f1e fad2 8002 d1cd 13d2 0100 0000 6400 2200 0006 6d65 7368 2d31 0104 0204 0b16 0301 0106 0200 002a 0100
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 c032 c856 2901 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c0cb 2892
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 f032 e17c 2a01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e28c da67
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 2033 3e0c 2c01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1b90 9e83
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 5033 63a0 2d01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ac41 1940
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 8033 e22c 2f01 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 219c 0808
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 b033 72bc 3001 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1634 bbc1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 e033 334d 3201 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cecb 5cd8
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 1034 aadc 3301 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 63eb 564c
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(9e:a9:26:71:f9:60) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 9ea9 2671 f960 4034 a96c 3501 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 72ed c36e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 7034 cf01 0000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 651a f745
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a034 d7b4 20d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4bf8 5f0e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d034 ae44 22d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5c9b ee4f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 0035 add4 23d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 087f 4778
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +38
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 3035 24f1 26d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 a87f a219
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 38
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 1M +39
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00e3 aaaa 0300 0000 0806 0001 0800 0604 0001 0015 e942 5e3e 0a61 0114 0000 0000 0000 0a61 0114 6520 5539
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 7035 b814 2ad2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 1700 3d3a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 1M +39
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10e3 aaaa 0300 0000 0806 0001 0800 0604 0001 0015 e942 5e3e 0a61 0114 0000 0000 0000 0a61 0114 08d3 e78c
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a035 b134 2dd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b560 6170
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d035 afe5 31d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0ebd 2d2d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 0036 0b75 33d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8191 02ba
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 3036 ed94 36d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4373 86f7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 6036 3425 38d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7241 fba3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 9036 f6b4 39d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2d01 a383
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 1M +40
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20e3 aaaa 0300 0000 0806 0001 0800 0604 0001 0015 e942 5e3e 0a61 0114 0000 0000 0000 0a61 0114 fec0 4189
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c036 c944 3bd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8635 caea
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f036 b0d4 3cd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9647 dad1
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 2037 3d81 41d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d0a2 d9b4
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5037 53a4 44d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 9dbd 579d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8037 1f35 46d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f7ac 2fda
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b037 89c1 47d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 42e3 e806
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e037 f653 49d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 5ee4 026d
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +34
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30e3 aaaa 0300 0000 0800 4500 0060 9b0c 0000 8011 87ac 0a61 0114 0a61 01ff 0089 0089 004c a353 8224 2910 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 03cd de05
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +35
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40e3 e0e0 03ff ff00 5000 1400 0000 00ff ffff ffff ff04 55e1 a9b6 2a00 0000 0000 0104 5500 0500 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0045 0541 5320 2020 2020 2020 2020 2020 2020 03ff dc88 b7a9
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 1038 46e5 4ad2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 c77d 4631
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5038 97a4 0000 0000 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b1c7 77ca
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8038 7694 4fd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 46c5 5061
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +36
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60e3 aaaa 0300 0000 0800 4500 0060 9b2b 0000 8011 878d 0a61 0114 0a61 01ff 0089 0089 004c a353 8224 2910 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 1431 9312
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c038 06d5 55d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 0336 7418
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f038 fa63 57d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 f7c1 b6a7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 2039 59f7 58d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 4288 15ad
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 5039 6d84 5ad2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 6620 aefd
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 8039 24a4 5dd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 d7ca 179f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b039 bc35 5fd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 ee0a 347a
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +37
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70e3 aaaa 0300 0000 0800 4500 0060 9b50 0000 8011 8768 0a61 0114 0a61 01ff 0089 0089 004c a353 8224 2910 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 2920 2434
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e039 42c5 60d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 3cb4 4297
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 103a 6b55 62d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 952d 6f99
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 403a 0606 67d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2989 b339
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +36
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80e3 aaaa 0300 0000 0800 4500 0060 9b75 0000 8011 8743 0a61 0114 0a61 01ff 0089 0089 004c a453 8224 2810 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 c406 ee60
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 803a 8584 73d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 e213 5db3
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b03a 8f14 75d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 2b99 4d62
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +35
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 90e3 aaaa 0300 0000 0800 4500 0060 9b91 0000 8011 8727 0a61 0114 0a61 01ff 0089 0089 004c e73a 822a 2910 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 11b0 b253
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f03a f235 78d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 83a7 3a85
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 303b e293 81d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 8a87 4abf
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +37
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 c0e3 aaaa 0300 0000 0800 4500 0060 9bb5 0000 8011 8703 0a61 0114 0a61 01ff 0089 0089 004c e73a 822a 2910 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 6c58 e3fa
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 603b d924 83d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7283 46c9
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +40
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 a03b 7914 8ed2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cf2d 2c96
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 40
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +36
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e0e3 aaaa 0300 0000 0800 4500 0060 9bda 0000 8011 86de 0a61 0114 0a61 01ff 0089 0089 004c e73a 822a 2910 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 df86 33a6
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +39
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 d03b 9f34 91d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 774c eaf7
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 39
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +41
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 003c d1c4 92d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 cb87 0a97
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 41
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +36
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 f0e3 aaaa 0300 0000 0800 4500 0060 9bf7 0000 8011 86c1 0a61 0114 0a61 01ff 0089 0089 004c e83a 822a 2810 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4141 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 12db e7d3
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 603c 7b61 a2d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 43f9 dd93
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +34
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 00e4 aaaa 0300 0000 0800 4500 0060 9c1b 0000 8011 869d 0a61 0114 0a61 01ff 0089 0089 004c d937 822c 2910 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4142 4f00 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 9d7c acee
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +35
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 10e4 aaaa 0300 0000 0800 4500 0060 9c1c 0000 8011 869c 0a61 0114 0a61 01ff 0089 0089 004c a347 822e 2910 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 06bf 17c9
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +37
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 20e4 e0e0 03ff ff00 5000 1400 0000 00ff ffff ffff ff04 55e1 a9b6 2a00 0000 0000 0104 5500 0300 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0040 0341 5320 2020 2020 2020 2020 2020 2020 03ff 28db a24b
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +44
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 b03c 8031 aad2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 7ad2 24c6
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 44
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +45
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 e03c 8554 add2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 da02 ea9e
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 45
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +40
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 30e4 aaaa 0300 0000 0800 4500 0060 9c43 0000 8011 8675 0a61 0114 0a61 01ff 0089 0089 004c d937 822c 2910 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4142 4f00 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 bdde 635b
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +42
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 40e4 aaaa 0300 0000 0800 4500 0060 9c44 0000 8011 8674 0a61 0114 0a61 01ff 0089 0089 004c a347 822e 2910 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 5fd3 a9f0
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +39
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 50e4 e0e0 03ff ff00 5000 1400 0000 00ff ffff ffff ff04 55e1 a9b6 2a00 0000 0000 0104 5500 0300 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0040 0341 5320 2020 2020 2020 2020 2020 2020 03ff 6cfb 8f18
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 503d 8e41 b8d2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 bc45 6f64
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) beacon 2M +43
+ 8000 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 803d 9f61 bbd2 0100 0000 6400 0204 0006 6d65 7368 2d31 0108 8284 8b96 1224 486c 0301 0106 0200 002a 0104 3204 8c98 b060 b8b4 605f
+SWJTU(PHY%d): received beacon from 00:15:e9:42:5e:3e rssi 43
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +40
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 60e4 aaaa 0300 0000 0800 4500 0060 9c69 0000 8011 864f 0a61 0114 0a61 01ff 0089 0089 004c d937 822c 2910 0001 0000 0000 0001 2046 4845 5046 4345 4c45 4846 4345 5046 4646 4143 4143 4143 4143 4143 4143 4142 4f00 0020 0001 c00c 0020 0001 0004 93e0 0006 8000 0a61 0114 d4e1 1f77
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +40
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 70e4 aaaa 0300 0000 0800 4500 0060 9c6a 0000 8011 864e 0a61 0114 0a61 01ff 0089 0089 004c a347 822e 2910 0001 0000 0000 0001 2045 4246 4443 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4143 4100 0020 0001 c00c 0020 0001 0004 93e0 0006 0000 0a61 0114 a580 23e7
+NODS 00:15:e9:42:5e:3e->ff:ff:ff:ff:ff:ff(02:03:7f:1e:fa:d2) data 54M +40
+ 0800 0000 ffff ffff ffff 0015 e942 5e3e 0203 7f1e fad2 80e4 e0e0 03ff ff00 5000 1400 0000 00ff ffff ffff ff04 55e1 a9b6 2a00 0000 0000 0104 5500 0300 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0040 0341 5320 2020 2020 2020 2020 2020 2020 03ff 10ad c499
+

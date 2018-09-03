@@ -1,0 +1,18 @@
+C_SRC := $(wildcard *.c)
+H_SRC := $(wildcard *.h)
+C_TEX := $(C_SRC:.c=_c.tex)
+H_TEX := $(H_SRC:.h=_h.tex)
+
+all:		Makefile.tex $(C_TEX) $(H_TEX)
+
+clean:
+		rm -f Makefile.tex $(C_TEX) $(H_TEX)
+
+%_h.tex:	%.h
+		cpp2latex -h -s 0 $< > $@
+
+%_c.tex:	%.c
+		cpp2latex -h -s 0 $< > $@
+
+Makefile.tex:	Makefile
+		cpp2latex -s 0 -t 8 Makefile > Makefile.tex

@@ -1,0 +1,28 @@
+		Linux无线工具的README
+				李志杰 2005.03.30
+2006.04.20
+      无线扩展的版本	：	29 pre
+      无线工具的版本	：	21
+
+版本
+	无线工具的版本	:	27
+	无线扩展的版本	:	17
+	
+编译产生
+	一个库：libiw.a/libiw.so
+	8个应用程序：
+		iwconfig : 
+		iwlist : 
+		iwpric : 
+		iwspy : 
+		iwgetid : 
+		iwevent : 
+		ifrename : 
+		macaddr :
+	
+编译前，先将扩展版本对于的头文件拷贝为wireless.h，开始编译。
+这个步骤已经完成，不需要单独执行
+
+安装
+	除了安装生成的可行程序和库外，还需要安装两个头文件wireless.h和iwlib.h。
+	分别将这两个文件拷贝到/arm-linux/arm-linux/include和/usr/include两个目录下

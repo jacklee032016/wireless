@@ -1,0 +1,7 @@
+	Host AP Daemon ChangeLog
+		李志杰 2005.03.30
+		
+2005.03.30
+	分别建立不同的配置文件defconfig和defconfig.ixp以支持PC和IXP
+	（因为IXP422上还没有支持openssl的库）
+	

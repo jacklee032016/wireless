@@ -1,0 +1,98 @@
+# $Log: Makefile.pre,v $
+# Revision 1.1.1.1  2006/11/30 16:59:12  lizhijie
+# MAC HostAP
+#
+# Revision 1.1.1.1  2006/04/01 11:29:57  lizhijie
+# hostap-all
+#
+# Revision 1.7  2005/07/06 07:33:47  lizhijie
+# add some descriptions about atheros
+#
+# $Id: Makefile.pre,v 1.1.1.1 2006/11/30 16:59:12 lizhijie Exp $
+#
+
+
+# for release 
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_wlan_$(BUILDTIME).tar.gz 
+
+ARCH=arm
+LINK= #static
+
+
+ASSIST_SHARED=yes
+RELEASES_DIR=../releases
+C_CFLAGS = -Wall
+
+ifeq ($(LINK), static)
+	ASSIST_SHARED=
+	LDFLAGS+= -Wl,-static
+	# C_CFLAGS+=-Wl, static
+else
+	#LDFLAGS+= -shared
+	#C_CFLAGS+=-Wl, shared
+endif
+
+BIN_DIR=$(TOP_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR=Linux.obj.$(ARCH)
+
+ifeq ($(ARCH),arm)
+	C_CFLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CXX_FLAGS += -mbig-endian -D__ARM_IXP__=1 
+	CROSS_COMPILER=arm-linux-
+	LIB_LDFLAGS+= -mbig-endian 
+	#ASSIST_SHARED= 
+	flag=-mbig-endian
+	INSTALL_INC=/arm-linux/arm-linux/include/
+	
+	K_CFLAGS +=	-mbig-endian  -D__ARM__  -msoft-float
+# 	K_CFLAGS+= -mbig-endian  -D__ARM__  -DMODULE -D__KERNEL__ -DEXPORT_SYMTAB -msoft-float
+# 	K_CFLAGS+=  -DMODVERSIONS  -include /cygdrive/d/ixp_works/linux-2.4.x/include/linux/modversions.h 
+# 	K_CFLAGS+= -DAH_REGOPS_FUNC # -march=armv4 
+# 	K_CFLAGS+= -fno-strict-aliasing -fno-common -Uarm -fno-common 
+# 	K_CFLAGS+= -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale 
+# 	K_CFLAGS+= -mshort-load-bytes -msoft-float -Uarm 
+# 	K_CFLAGS+= -mbig-endian -fno-strict-aliasing -fno-common -mapcs-32 
+# 	K_CFLAGS+= -mtune=xscale  -mshort-load-bytes -msoft-float -mfp=2 
+
+	KINCLUDES=/works/isdn/kernel/linux-2.4.x
+	K_LDFLAGS+= -EB 
+	MODULES_DIR =$(BIN_DIR)/lib/modules/2.4.24-uc0
+else
+	ARCH=i686
+	INSTALL_INC=/usr/include/
+	
+	KINCLUDES=/usr/src/linux-2.4
+	MODULES_DIR =$(BIN_DIR)/lib/modules/2.4.24
+endif
+
+#ifneq ("","$(ASSIST_SHARED)")
+#	#LDFLAGS+=  -mbig-endian #-Wl,-Bdynamic 
+#else
+#	LDFLAGS+=  # -Wl,-Bstatic
+#endif
+
+export KINCLUDES
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 	= $(CROSS_COMPILER)ar
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS		= crus
+
+
+K_LDFLAGS+= -r -d 
+

@@ -1,0 +1,92 @@
+#
+# $Revision: 1.1.1.1 $
+# $Author: lizhijie $
+# $Log: Makefile.pre,v $
+# Revision 1.1.1.1  2006/11/30 16:45:27  lizhijie
+# MAC SoftMAC
+#
+# Revision 1.1.1.1  2006/03/03 08:24:49  lizhijie
+# softmac for wireless
+#
+#
+
+# global option for the driver
+KERNEL=yes
+
+ifeq ($(KERNEL_DIR),)
+	KERNEL_DIR=/works/isdn/kernel/linux-2.4.x/include
+endif
+
+
+ARCH=arm
+
+RELEASES_DIR=../releases
+
+ifeq ($(ARCH),arm)
+	CC_FLAGS = -mbig-endian
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+=-L/usr/local/lib -L.
+  	LDFLAGS+= -mbig-endian 
+
+ 	K_CFLAGS+= -mbig-endian   -D__ARM__=1 -I$(TOP_DIR)/linux_netif   
+	K_LDFLAGS+= -EB 
+	KINCLUDES=$(KERNEL_DIR)
+	RELEASES_DIR=lib/modules/2.4.24-uc0
+else
+	KINCLUDES=/usr/src/linux-2.4/include
+	RELEASES_DIR=lib/modules/2.4.24
+	ARCH=i686
+endif
+
+
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+RELEASES_NAME=softmac_$(ARCH)_$(BUILDTIME).tar.gz 
+
+CFLAGS+= -Wall -I. -I$(TOP_DIR)/include  $(CC_FLAGS) #-g  -I/usr/local/include
+LFLAGS+= -L/usr/local/lib -L.
+
+BIN_DIR:=$(TOP_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR:=Linux.obj.$(ARCH)
+
+
+CC		= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD		= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 		= $(CROSS_COMPILER)ar
+
+HOSTCC	= gcc
+
+RM		= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS	= crv
+
+
+K_CFLAGS+= -DMODULE -D__KERNEL__ -DEXPORT_SYMTAB 
+K_CFLAGS+= -I$(KINCLUDES)
+K_CFLAGS+= -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+K_CFLAGS+= -DMODVERSIONS  -include $(KINCLUDES)/linux/modversions.h  
+K_CFLAGS+= -Wall -I. -Wstrict-prototypes -fomit-frame-pointer $(MACRO_CFLAGS)
+
+K_LDFLAGS+= -r -d
+
+
+HOST_CFLAGS+=  -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+HOST_CFLAGS+= $(INCLUDE_DIR) 
+
+
+C_CFLAGS+= 
+C_CFLAGS+= -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+C_CFLAGS+= $(INCLUDE_DIR) 
+C_CFLAGS+= #-Wno-deprecated 
+
+CFLAGS+=$(C_CFLAGS)	$(MACRO_CFLAGS)

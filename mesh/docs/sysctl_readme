@@ -1,0 +1,26 @@
+# $Id: sysctl_readme,v 1.1.1.1 2006/11/30 17:00:40 lizhijie Exp $
+		README for sysctl of mesh subsystem
+		              Li Zhijie, 2006.08.25
+
+MESH子系统的sysctl统一规划和使用
+     root节点使用CTL_DEV，即/proc/sys/dev，名字改变为/proc/sys/mesh
+
+
+root
+   |-- mesh : 详细的目录结构暂时还没有定义，可以考虑实现的层次结构有MESH算法、路由转发表的目录
+   |
+   |-- dev  : MESH_DEVICE的实现，MESH_DEVICE完成的是上层MESH控制和管理报文的传输接口
+         |
+         |--wifi  :  WLAN设备上实现MESH_DEVICE，完成MESH的数据和管理报文在WLAN上传输
+         |     |
+         |     |--mac  : WIFI的MAC层实现，主要的、基本与硬件无关的802.11协议栈实现
+         |     |
+         |     |--phy  ：Atheros芯片的PHY控制软件
+         |     |
+         |     |--hw   ：Atheros芯片驱动的HAL层软件
+	 |
+	 |--eth   :  在athernet设备上实现的MESH_DEVICE，可以用ethernet介值上测试MESH层的算法和协议
+	 |
+	 |--wimax  :  今后可以在802.16设备上实现的MESH_DEVICE，完成MESH的数据和管理报文在WIMAX上的传输
+
+	 	              

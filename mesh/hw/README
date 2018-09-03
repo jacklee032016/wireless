@@ -1,0 +1,20 @@
+# $Id: README,v 1.1.1.1 2006/11/30 17:00:40 lizhijie Exp $
+
+		README for hw module
+				Li Zhijie, 2006.08.25
+
+Atheros芯片的HAL层软件
+   HAL输出符号可以被客户端软件（即PHY层驱动）访问
+   
+   hw源码中定义一组操作系统的接口函数，如内存分配和释放、延时功能等函数被HAL使用
+   这样使HAL可以被使用在不同的OS中
+   
+   sysctrl接口
+       注册在/proc/sys/mesh/dev/wifi/hw/
+       需要统一mesh程序中所有的syctrl接口
+       
+       三个整数型的控制变量（控制HAL软件的使用）
+           dma_beacon_response_time
+           sw_beacon_response_time
+           swba_backoff
+				

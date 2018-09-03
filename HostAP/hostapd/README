@@ -1,0 +1,14 @@
+	Host AP Daemon README
+		李志杰 2005.03.29
+		
+这是使用hostapd 0.3.5实现的WLAN Access Point
+
+支持IXP422
+	IXP422中需要增加openssl的支持（crypt.c）
+
+编译
+	根据需要修改src目录下的defconfig文件，然后将此文件拷贝为.config，就可以开始编译
+
+编译后的结果
+	hostapd
+	hostapd_cli

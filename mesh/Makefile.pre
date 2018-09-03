@@ -1,0 +1,86 @@
+#
+# $Id: Makefile.pre,v 1.1.1.1 2006/11/30 17:00:40 lizhijie Exp $
+# $Author: lizhijie $
+#
+#
+
+# global option for the driver
+KERNEL=yes
+
+ifeq ($(KERNEL_DIR),)
+	KERNEL_DIR=/works/isdn/kernel/linux-2.4.x/include
+endif
+
+ARCH=arm
+
+RELEASES_DIR=../releases
+
+ifeq ($(ARCH),arm)
+	CC_FLAGS = -mbig-endian
+	CROSS_COMPILER=arm-linux-
+  	LDFLAGS+= -mbig-endian 
+
+ 	K_CFLAGS+= -mbig-endian -D__ARM__=1 -D__ARM_IXP__=1 
+	K_LDFLAGS+= -EB 
+	KINCLUDES=$(KERNEL_DIR)
+	RELEASES_DIR=lib/modules/2.4.24-uc0
+else
+	KINCLUDES=/pc_works/linux-2.4.24/include
+	RELEASES_DIR=lib/modules/2.4.24
+	ARCH=i686
+endif
+
+
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+RELEASES_NAME=mywifi_$(ARCH)_$(BUILDTIME).tar.gz 
+
+CFLAGS+= -Wall -I. -I$(TOP_DIR)/compat -I$(TOP_DIR)/include $(CC_FLAGS) -D__ARM_IXP__=1 
+LFLAGS+= -L.
+
+BIN_DIR:=$(TOP_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR:=Linux.obj.$(ARCH)
+
+
+CC		= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD		= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+STRIP 	= $(CROSS_COMPILER)strip
+AR 		= $(CROSS_COMPILER)ar
+
+HOSTCC	= gcc
+
+RM		= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS	= crv
+
+
+K_CFLAGS+= -DMODULE -D__KERNEL__ -DEXPORT_SYMTAB  -DAH_BYTE_ORDER=AH_BIG_ENDIAN -DAH_REGOPS_FUNC 
+K_CFLAGS+= -DCONFIG_SYSCTL -DWITH_MESH=1  
+K_CFLAGS+= -I$(KINCLUDES) -I$(TOP_DIR)/include -include $(TOP_DIR)/compat/compat.h
+K_CFLAGS+= -O6 -I$(TOP_DIR)/compat #-nostdinc
+K_CFLAGS+= -DMODVERSIONS  -include $(KINCLUDES)/linux/modversions.h  
+K_CFLAGS+= -Wall -I. -Wstrict-prototypes -fomit-frame-pointer $(MACRO_CFLAGS) 
+K_CFLAGS+= -I$(TOP_DIR)/80211/include  
+
+K_LDFLAGS+= -r -d
+
+
+HOST_CFLAGS+=  -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+HOST_CFLAGS+= $(INCLUDE_DIR) 
+
+
+C_CFLAGS+= 
+C_CFLAGS+= -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+C_CFLAGS+= $(INCLUDE_DIR) 
+C_CFLAGS+= #-Wno-deprecated 
+
+CFLAGS+=$(C_CFLAGS)	$(MACRO_CFLAGS)

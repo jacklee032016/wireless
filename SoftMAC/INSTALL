@@ -1,0 +1,47 @@
+##########################################
+ Installation steps for SoftMAC
+ $LastChangedDate: 2005-08-17 04:54:49 +0800 (星期三, 17 八月 2005) $
+##########################################
+
+1) Install the Linux distribution of your choice
+   (we use Mandrake and Debian on our development machines)
+
+2) We recommend using Linux kernel version 2.6.11.6 because it's what we use.  
+   A few slightly newer and older kernel versions are known to work.  Linux 
+   2.4 is not supported.  The build process will attempt to find your kernel 
+   source in /usr/src/linux.  It is recommended that the environment variable 
+   KERNELSOURCE be set so that 'make' can find the correct kernel source 
+   directory.
+
+$ export KERNELSOURCE=/usr/src/linux-2.6.11.6
+
+3) Obtain the softmac source code from the SVN repository or as a tar.gz 
+   snapshot.  Navigate to the softmac root directory.  If using softmac
+   from SVN, this will be softmac/trunk.
+
+$ svn co https://systems.cs.colorado.edu/svn/softmac
+$ cd softmac/trunk
+
+4) Type 'make' in the softmac source root directory to build softmac.
+
+$ make
+
+5) Type 'make install' in the softmac source root directory to install softmac
+   on the local filesystem.  This installs the softmac kernel modules into
+   /lib/modules/2.6.11.6/net.  If using a non-standard kernel version, make
+   will try to find the appropriate directory.  However, if your distro does
+   strange things to the kernel version (debian), 'make install' may not
+   work correctly.
+
+as root:
+# make install
+ - or - 
+as root:
+# mkdir /lib/modules/`uname -r`/net
+# cp `find . -name "*.ko"` /lib/modules/`uname -r`/net
+
+6) Run depmod so than modprobe can find your new softmac modules
+
+as root:
+# /sbin/depmod -ae
+

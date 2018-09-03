@@ -1,0 +1,55 @@
+#
+# $Revision: 1.1.1.1 $
+# $Author: lizhijie $
+# $Log: Makefile.post,v $
+# Revision 1.1.1.1  2006/11/30 16:46:13  lizhijie
+# MAC VirtualMAC
+#
+# Revision 1.1.1.1  2006/03/06 10:17:07  lizhijie
+# Virtual MAC upon 802.11
+#
+# Revision 1.1.1.1  2006/03/03 08:24:49  lizhijie
+# softmac for wireless
+#
+#
+
+KOBJS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(KSRC))) $(EXTRA_OBJS)
+
+OBJS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(patsubst %.cxx,$(OBJ_DIR)/%.o,$(SRC))) $(EXTRA_OBJS)
+
+
+all:$(BIN_DIR) $(OBJ_DIR) $(LOCAL_ALL) $(TARGET_LIB) $(KERNEL_LIB) $(LOCAL_LAST)
+
+$(OBJ_DIR):
+	-if [ -d $(OBJ_DIR) ] ; then : ; else $(MKDIR) $(OBJ_DIR); fi	
+ifdef CODE_SUBDIRS
+	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(OBJ_DIR)/$$subdir ) ; done
+endif
+
+$(BIN_DIR):
+	-if [ -d $(BIN_DIR) ] ; then : ; else $(MKDIR) $(BIN_DIR); fi
+#ifdef CODE_SUBDIRS
+#	-@ for subdir in $(CODE_SUBDIRS) ; do ( mkdir -p $(BIN_DIR)/$$subdir ) ; done
+#endif
+
+$(TARGET_LIB): $(OBJS)  
+	$(AR) $(ARFLAGS) $@ $^ 
+	$(RANLIB) $@
+	$(MOVE) $(TARGET_LIB) $(BIN_DIR)/
+
+$(KERNEL_LIB): $(KOBJS) 
+	$(LD) $(K_LDFLAGS) $^ -o $@
+	$(MOVE) $(KERNEL_LIB) $(BIN_DIR)/
+
+
+clean:$(LOCAL_CLEAN)
+	-if [ -d $(BIN_DIR) ] ; then $(RM) $(BIN_DIR) ; fi
+	-if [ -d $(OBJ_DIR) ] ; then $(RM) $(OBJ_DIR) ; fi
+
+ifeq ($(KERNEL),yes)
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(K_CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+else
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $(OUTPUT_FLAG)$@ 
+endif

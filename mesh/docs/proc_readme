@@ -1,0 +1,13 @@
+# $Id: proc_readme,v 1.1.1.1 2006/11/30 17:00:40 lizhijie Exp $
+		README for proc of mesh subsystem
+		              Li Zhijie, 2006.08.25
+
+MESH子系统的proc文件系统的使用包括两个部分
+     proc的sysctl控制接口，参考sysctl_readme
+     一般的proc文件，当前使用了MESH管理器meshMgr的接口
+
+/proc/mesh
+          |
+          |-- meshMgr : 参考MESH子系统的全局信息，当前内容还没有定义
+
+	 	              

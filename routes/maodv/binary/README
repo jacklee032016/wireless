@@ -1,0 +1,14 @@
+#
+# $Id: README,v 1.1.1.1 2006/11/30 17:00:19 lizhijie Exp $
+#
+                          README for releases
+                                           李志杰 2006.03.31
+
+
+二进制测试的目录列表
+
+-----lib--
+  |      |		：	无线工具软件的共享库
+  |      |--modules   	:	驱动的目录
+  |--sbin		：	无线工具软件的二进制分布
+  |--scripts            ：	测试AODV的不同脚本

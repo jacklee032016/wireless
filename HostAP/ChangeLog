@@ -1,0 +1,12 @@
+		ChangeLog for WLAN Application
+				build on March,30th, 2005, By Li Zhijie
+
+
+2005.04.21
+	增加AODV（kernel_aodv_2.2.2）
+	增加桥的管理工具
+
+2005.03.30
+	将四个部分集中到一起，编译直接生成程序、库和驱动运行时的目录结构
+					
+				

@@ -1,0 +1,3 @@
+ifeq (-D__KERNEL__ -I/works/isdn/kernel/linux-2.4.x/include -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm -DMODULE -include ./../include/compat.h -I./../include -I./../../include -I./../hal -I./../hal/linux -I./../ath_hal -I./../net80211 -I./.. -DATH_PCI -DHAS_CU_SOFTMAC -DAH_BYTE_ORDER=AH_BIG_ENDIAN -DAH_REGOPS_FUNC -mbig-endian -fno-strict-aliasing -fno-common -mapcs-32 -mtune=xscale -malignment-traps -msoft-float -mfp=2 -D__ARM__=1 -DEXPORT_SYMTAB -nostdinc -iwithprefix include,$(strip $(subst $(comma),:,$(CFLAGS) $(EXTRA_CFLAGS_nostdinc) $(CFLAGS_if_ath.o))))
+FILES_FLAGS_UP_TO_DATE += if_ath.o
+endif

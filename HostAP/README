@@ -1,0 +1,16 @@
+	README for Wireless Application
+			2005.03.30   李志杰
+
+
+无线应用主要包括以下几个程序
+	atheros			Atheros公司5102系列芯片，支持AP
+	tools			无线应用的工具软件，例如iwconfig等，这是对驱动的配置
+				详细的工具和作用：参考tools/docs/man的内容
+	hostapd			是支持host ap的驱动的用户层的、可选的组件，主要是增强
+					安全线。支持atheros芯片驱动的AP程序
+	hostadUtils		对AP的配置管理程序
+	
+	后面两个程序不是必须的。
+	
+统一的编译和使用
+				

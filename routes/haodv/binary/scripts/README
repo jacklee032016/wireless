@@ -1,0 +1,20 @@
+#
+# $Id: README,v 1.1.1.1 2006/11/30 16:58:41 lizhijie Exp $
+#
+
+		README for AODV Test
+		              Li Zhijie, 2006.03.31
+
+这个目录中包含测试需要的脚本程序
+
+脚本分为两类
+    包含加载无线驱动等全部需要的脚本
+        其中all.sh和all2.sh分别使用在不同的节点上
+        停止、卸载驱动的脚本stopall.sh适用于两个节点
+        
+    
+    仅启动AODV协议的脚本
+        start.sh和start2.sh，分别使用在不同的节点上
+        对于有线和无线，需要修改使用的网卡接口
+        停止脚本stop.sh使用于两个节点
+            

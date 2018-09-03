@@ -1,0 +1,30 @@
+Linux RadioTap
+--------------
+These patches add RadioTap support to the Linux IEEE80211 stack.
+
+RadioTap was first developed on NetBSD and provides a common signal layer for
+all the different wireless drivers.  It's extendable and cross-platform.
+
+At the moment this code assumes we will be assigned ARPHRD 803 for radiotap.
+
+RadioTap
+--------
+Radiotap is a standard header format for signal layer information from wireless
+cards (similar to the Wlan-NG Prism and AVS header formats).  It is used on
+Net, Free, and OpenBSD to carry information.
+
+The radiotap headers consist of a bitfield of included fields, and the field
+data itself.  It contains the expected antenna, signal, noise, channel,
+and MAC timing fields, as well as a set of flags to indicate appended FCS
+bytes and other fields.
+
+Why?
+----
+Linux is finally getting a unified 802.11 stack.  I'd like to see this done
+right, so that we have a standard format for getting data from cards that
+provides all the information we need.  One option is to expand the AVS headers,
+however they are not without their limitations.  By adding radiotap support,
+we come in line with other systems providing info and we allow the same 
+dissection code to work in userspace across multiple operating systems.
+Besides, if a standard already exists with all the components we need, does
+inventing a new one make sense?

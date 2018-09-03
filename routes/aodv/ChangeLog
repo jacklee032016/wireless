@@ -1,0 +1,20 @@
+#
+# $Id: ChangeLog,v 1.1.1.1 2006/11/30 16:56:48 lizhijie Exp $
+#
+
+	AODV协议(ver 1.0) ChangeLog and ToDo List
+
+						李志杰 2005.03.31
+
+ToDo List
+   实现一个更加基本的框架，以便加入新的路由协议
+   
+   将路由与MAC紧密结合，在Layer 2或2.5上实现无线路由
+   
+   考虑在Mesh或者符合802.11s的Mesh、无线主干传输的MAC的无线路由功能
+
+
+
+Change Log
+   2006.03.31
+     修改全部的软件程序框架，保留原来的协议流程，能够建立路由

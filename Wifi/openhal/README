@@ -1,0 +1,20 @@
+ABOUT:
+This is a port of the OpenBSD hal for atheros device drivers that is
+source-compatible with the Madwifi driver for linux.
+
+
+DOWNLOAD:
+Get up to date sources from:
+http://pdos.csail.mit.edu/~jbicket/openhal/
+
+BUILDING: 
+To build with Madwifi, place the Openhal source directory in the
+Madwifi directory. Now edit Makefile.inc and set the following:
+
+HAL=${DEPTH}/openhal
+ATH_HAL=${DEPTH}/openhal
+
+After this, go to the top directory and build like you normally would. 
+
+
+编译需要hal目录下的两个子目录，以包含OS的头文件和需要的平台文件

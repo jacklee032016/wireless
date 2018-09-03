@@ -1,0 +1,7 @@
+	TodoList for Wireless Application
+			2005.03.30   李志杰
+
+为IXP422增加openssl的支持
+
+增加对wpa_supplicant的支持
+

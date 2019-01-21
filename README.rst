@@ -12,7 +12,7 @@ Mesh protocols stack:
 #. bridge: bridge and its filters;
 
 
-* routes:
+routes
 =====================
    * aodv: AODV
    * DSR:

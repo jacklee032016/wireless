@@ -1,0 +1,23 @@
+# $Id: readme,v 1.1.1.1 2006/11/29 08:55:14 lizhijie Exp $
+
+			README for Japanese User INS Layer3 driver
+						Li Zhijie, 2005.08.24
+
+rewrite based on l3_udss1.c
+
+Filelist:
+ 1.l3_utils.c				Layer3 utils, all other dependent on it
+ 2.l3_fsm.c					Layer3 Finite State Machine
+ 3.l3_msg.c					Layer3 Message utils handler, based on l3_utils.c
+ 4.l3_ie.c					Handler for IE in Layer3 Messages
+ 5.l3_ins_process_mgr.c		State/Primitive/Handler table used in L3_process manager, 
+							based on l3_msg.c
+ 6.l3_ins_global_handler.c	State/Primitive/Handler table used for global CallReference, 
+							used in fromdown interface, based on l3_msg.c
+ 7.l3_ins_down_states.c		State/Primitive/Handler table used for fromup interface, 
+							based on l3_msg.c
+ 8.l3_ins_down_states.c		State/Primitive/Handler table used for fromdown interface, 
+							based on l3_msg.c
+ 9.l3_uins_if.c				Interface function for Layer3 instance, based on l3_ins_***.c
+ 10.l3_uint_init.c			Kernel and ISDN core engine interface, basde on l3_uins_if.c and l3_fsm.c 
+						

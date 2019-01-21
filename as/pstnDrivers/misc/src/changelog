@@ -1,0 +1,18 @@
+ChangeLog for Driver/misc/src
+2005.09.07
+	增加按钮功能的驱动，实现恢复出厂默认配置
+
+2005.07.01
+	更改蜂鸣器的引脚映射为 GPIO0
+
+2005.06.17
+	在 MakeFile 中增加 make install 指令时将BIN文件拷贝至目录 /drivers/bin
+
+2005.06.15
+	增加杂项设备的驱动[蜂鸣器]，包括文件[as_misc_beep.c][beep_test.c]，生成驱动程序[as_misc.o]
+	
+2005.06.07
+	增加杂项设备的驱动，看门狗，生成as_misc.o
+	
+2005.06.15
+	增加ChangeLog for Driver/misc/src

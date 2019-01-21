@@ -1,0 +1,618 @@
+
+#define DSP_FEATURE_SILENCE_SUPPRESS 		(1 << 0)
+#define DSP_FEATURE_BUSY_DETECT      		(1 << 1)
+#define DSP_FEATURE_CALL_PROGRESS    		(1 << 2)
+#define DSP_FEATURE_DTMF_DETECT		 	(1 << 3)
+#define DSP_FEATURE_FAX_DETECT		 	(1 << 4)
+
+
+/* Number of goertzels for progress detect */
+#define GSAMP_SIZE_NA 		183			/* North America - 350, 440, 480, 620, 950, 1400, 1800 Hz */
+#define GSAMP_SIZE_CR 		188			/* Costa Rica - Only care about 425 Hz */
+#define GSAMP_SIZE_JAPAN 	188			/* Costa Rica - Only care about 425 Hz */
+
+#define PROG_MODE_NA		0
+#define PROG_MODE_CR		1	
+#define PROG_MODE_JAPAN	2	
+
+/* For US modes */
+#define HZ_350  0
+#define HZ_440  1
+#define HZ_480  2
+#define HZ_620  3
+#define HZ_950  4
+#define HZ_1400 5
+#define HZ_1800 6
+
+/* For CR modes */
+#define HZ_425	0
+
+
+static struct progalias 
+{
+	char *name;
+	int mode;
+} aliases[] = 
+{
+	{ "us", PROG_MODE_NA },
+	{ "ca", PROG_MODE_NA },
+	{ "cr", PROG_MODE_CR },
+	{ "jp", PROG_MODE_JAPAN },
+};
+
+
+
+/* For JAPAN modes */
+#define JAPAN_HZ_400		0
+#define JAPAN_HZ_15			1	/* RING BACK */
+#define JAPAN_HZ_16			2	/* CALL WAIT */
+#define JAPAN_HZ_1400		3	/* RECORDER */
+
+
+static struct progress 
+{
+	int size;
+	int freqs[7];
+} modes[] = 
+{
+	{ GSAMP_SIZE_NA, { 350, 440, 480, 620, 950, 1400, 1800 } },	/* North America */
+	{ GSAMP_SIZE_CR, { 425 } },
+	{ GSAMP_SIZE_JAPAN, { 400, 15, 16, 1400  } },
+};
+
+#define DEFAULT_THRESHOLD 512
+
+#define BUSY_PERCENT		10	/* The percentage diffrence between the two last silence periods */
+#define BUSY_THRESHOLD		100	/* Max number of ms difference between max and min times in busy */
+#define BUSY_MIN			75	/* Busy must be at least 80 ms in half-cadence */
+#define BUSY_MAX			1100	/* Busy can't be longer than 1100 ms in half-cadence */
+
+/* Remember last 15 units */
+#define DSP_HISTORY 		15
+
+/* Define if you want the fax detector -- NOT RECOMMENDED IN -STABLE */
+#define FAX_DETECT
+
+#define TONE_THRESH 		10.0	/* How much louder the tone should be than channel energy */
+#define TONE_MIN_THRESH 	1e8	/* How much tone there should be at least to attempt */
+#define COUNT_THRESH  		3		/* Need at least 50ms of stuff to count it */
+
+#define TONE_STATE_SILENCE  	0
+#define TONE_STATE_RINGING  	1 
+#define TONE_STATE_DIALTONE 	2
+#define TONE_STATE_TALKING  	3
+#define TONE_STATE_BUSY     		4
+#define TONE_STATE_SPECIAL1	5
+#define TONE_STATE_SPECIAL2 	6
+#define TONE_STATE_SPECIAL3 	7
+
+
+typedef struct 
+{
+	float v2;
+	float v3;
+	float fac;
+} goertzel_state_t;
+
+
+typedef struct 
+{
+	int threshold;
+	int totalsilence;
+	int totalnoise;
+	int features;
+	int busymaybe;
+	int busycount;
+	int historicnoise[DSP_HISTORY];
+	int historicsilence[DSP_HISTORY];
+	goertzel_state_t freqs[7];
+	int freqcount;
+	int gsamps;
+	int gsamp_size;
+	int progmode;
+	int tstate;
+	int tcount;
+	int digitmode;
+	int thinkdigit;
+	float genergy;
+}as_tone_detector ;
+
+
+static inline void __goertzel_sample(goertzel_state_t *s, short sample)
+{
+	float v1;
+	float fsamp  = sample;
+	v1 = s->v2;
+	s->v2 = s->v3;
+	s->v3 = s->fac * s->v2 - v1 + fsamp;
+}
+
+static inline void __goertzel_update(goertzel_state_t *s, short *samps, int count)
+{
+	int i;
+	for (i=0;i<count;i++) 
+		__goertzel_sample(s, samps[i]);
+}
+
+
+static inline float __goertzel_result(goertzel_state_t *s)
+{
+	return s->v3 * s->v3 + s->v2 * s->v2 - s->v2 * s->v3 * s->fac;
+}
+
+static inline void __goertzel_init(goertzel_state_t *s, float freq, int samples)
+{
+	s->v2 = s->v3 = 0.0;
+	s->fac = 2.0 * cos(2.0 * M_PI * (freq / 8000.0));
+}
+
+static inline void __goertzel_reset(goertzel_state_t *s)
+{
+	s->v2 = s->v3 = 0.0;
+}
+
+
+static inline int __pair_there(float p1, float p2, float i1, float i2, float e)
+{
+	/* See if p1 and p2 are there, relative to i1 and i2 and total energy */
+	/* Make sure absolute levels are high enough */
+	if ((p1 < TONE_MIN_THRESH) || (p2 < TONE_MIN_THRESH))
+		return 0;
+	/* Amplify ignored stuff */
+	i2 *= TONE_THRESH;
+	i1 *= TONE_THRESH;
+	e *= TONE_THRESH;
+	/* Check first tone */
+	if ((p1 < i1) || (p1 < i2) || (p1 < e))
+		return 0;
+	/* And second */
+	if ((p2 < i1) || (p2 < i2) || (p2 < e))
+		return 0;
+	/* Guess it's there... */
+	return 1;
+}
+
+static int __as_dsp_call_progress(as_tone_detector *dsp, short *s, int len)
+{
+	int x;
+	int y;
+	int pass;
+	int newstate = TONE_STATE_SILENCE;
+	int res = 0;
+	
+	while(len) 
+	{
+		/* Take the lesser of the number of samples we need and what we have */
+		pass = len;
+		if (pass > dsp->gsamp_size - dsp->gsamps) 
+			pass = dsp->gsamp_size - dsp->gsamps;
+
+		for (x=0;x<pass;x++) 
+		{
+			for (y=0;y<dsp->freqcount;y++) 
+				__goertzel_sample(&dsp->freqs[y], s[x]);
+			dsp->genergy += s[x] * s[x];
+		}
+		s += pass;
+		dsp->gsamps += pass;
+		len -= pass;
+		
+		if (dsp->gsamps == dsp->gsamp_size) 
+		{
+			float hz[7];
+			for (y=0;y<7;y++)
+				hz[y] = __goertzel_result(&dsp->freqs[y]);
+#if 0
+			printf("Got whole dsp state: 350: %e, 440: %e, 480: %e, 620: %e, 950: %e, 1400: %e, 1800: %e, Energy: %e\n", 
+				hz_350, hz_440, hz_480, hz_620, hz_950, hz_1400, hz_1800, dsp->genergy);
+#endif
+			switch(dsp->progmode) 
+			{
+				case PROG_MODE_NA:
+					if (__pair_there(hz[HZ_480], hz[HZ_620], hz[HZ_350], hz[HZ_440], dsp->genergy)) 
+					{
+						newstate = TONE_STATE_BUSY;
+					} 
+					else if (__pair_there(hz[HZ_440], hz[HZ_480], hz[HZ_350], hz[HZ_620], dsp->genergy)) 
+					{
+						newstate = TONE_STATE_RINGING;
+					} 
+					else if (__pair_there(hz[HZ_350], hz[HZ_440], hz[HZ_480], hz[HZ_620], dsp->genergy)) 
+					{
+						newstate = TONE_STATE_DIALTONE;
+					} 
+					else if (hz[HZ_950] > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						newstate = TONE_STATE_SPECIAL1;
+					} 
+					else if (hz[HZ_1400] > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						if (dsp->tstate == TONE_STATE_SPECIAL1)
+							newstate = TONE_STATE_SPECIAL2;
+					} 
+					else if (hz[HZ_1800] > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						if (dsp->tstate == TONE_STATE_SPECIAL2)
+							newstate = TONE_STATE_SPECIAL3;
+					} 
+					else if (dsp->genergy > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						newstate = TONE_STATE_TALKING;
+					} 
+					else
+						newstate = TONE_STATE_SILENCE;
+					break;
+				case PROG_MODE_CR:
+					if (hz[HZ_425] > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						newstate = TONE_STATE_RINGING;
+					} 
+					else if (dsp->genergy > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						newstate = TONE_STATE_TALKING;
+					} 
+					else
+						newstate = TONE_STATE_SILENCE;
+					break;
+				case PROG_MODE_JAPAN:
+					if (hz[HZ_425] > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						newstate = TONE_STATE_RINGING;
+					} 
+					else if (dsp->genergy > TONE_MIN_THRESH * TONE_THRESH) 
+					{
+						newstate = TONE_STATE_TALKING;
+					} 
+					else
+						newstate = TONE_STATE_SILENCE;
+					break;
+				default:
+					as_error_msg( "Can't process in unknown prog mode '%d'\n", dsp->progmode);
+			}
+			
+			if (newstate == dsp->tstate) 
+			{
+				dsp->tcount++;
+				if (dsp->tcount == COUNT_THRESH) 
+				{
+					if (dsp->tstate == TONE_STATE_BUSY) 
+					{
+						res = AST_CONTROL_BUSY;
+						dsp->features &= ~DSP_FEATURE_CALL_PROGRESS;
+					} 
+					else if (dsp->tstate == TONE_STATE_TALKING) 
+					{
+						res = AST_CONTROL_ANSWER;
+						dsp->features &= ~DSP_FEATURE_CALL_PROGRESS;
+					} 
+					else if (dsp->tstate == TONE_STATE_RINGING)
+						res = AST_CONTROL_RINGING;
+					else if (dsp->tstate == TONE_STATE_SPECIAL3) 
+					{
+						res = AST_CONTROL_CONGESTION;
+						dsp->features &= ~DSP_FEATURE_CALL_PROGRESS;
+					}
+					
+				}
+			} 
+			else 
+			{
+#if 0
+				printf("Newstate: %d\n", newstate);
+#endif
+				dsp->tstate = newstate;
+				dsp->tcount = 1;
+			}
+			
+			/* Reset goertzel */						
+			for (x=0;x<7;x++)
+				dsp->freqs[x].v2 = dsp->freqs[x].v3 = 0.0;
+			dsp->gsamps = 0;
+			dsp->genergy = 0.0;
+		}
+	}
+#if 0
+	if (res)
+		printf("Returning %d\n", res);
+#endif		
+	return res;
+}
+
+
+static int __as_dsp_silence(as_dsp_gen_engine *engine, short *s, int len, int *totalsilence)
+{
+	as_tone_detector *dsp;
+	int accum;
+	int x;
+	int res = 0;
+
+	if (!len)
+		return 0;
+	
+	accum = 0;
+	for (x=0;x<len; x++) 
+		accum += abs(s[x]);
+	accum /= len;
+	if (accum < dsp->threshold) 
+	{
+		dsp->totalsilence += len/8;
+		if (dsp->totalnoise) 
+		{
+			/* Move and save history */
+			memmove(dsp->historicnoise + DSP_HISTORY - dsp->busycount, dsp->historicnoise + DSP_HISTORY - dsp->busycount +1, dsp->busycount*sizeof(dsp->historicnoise[0]));
+			dsp->historicnoise[DSP_HISTORY - 1] = dsp->totalnoise;
+/* we don't want to check for busydetect that frequently */
+#if 0
+			dsp->busymaybe = 1;
+#endif
+		}
+		dsp->totalnoise = 0;
+		res = 1;
+	} 
+	else 
+	{
+		dsp->totalnoise += len/8;
+		if (dsp->totalsilence) 
+		{
+			int silence1 = dsp->historicsilence[DSP_HISTORY - 1];
+			int silence2 = dsp->historicsilence[DSP_HISTORY - 2];
+			/* Move and save history */
+			memmove(dsp->historicsilence + DSP_HISTORY - dsp->busycount, dsp->historicsilence + DSP_HISTORY - dsp->busycount + 1, dsp->busycount*sizeof(dsp->historicsilence[0]));
+			dsp->historicsilence[DSP_HISTORY - 1] = dsp->totalsilence;
+			/* check if the previous sample differs only by BUSY_PERCENT from the one before it */
+			if (silence1 < silence2) 
+			{
+				if (silence1 + silence1/BUSY_PERCENT >= silence2)
+					dsp->busymaybe = 1;
+				else 
+					dsp->busymaybe = 0;
+			} 
+			else 
+			{
+				if (silence1 - silence1/BUSY_PERCENT <= silence2)
+					dsp->busymaybe = 1;
+				else 
+					dsp->busymaybe = 0;
+			}
+					
+		}
+		dsp->totalsilence = 0;
+	}
+	if (totalsilence)
+		*totalsilence = dsp->totalsilence;
+	return res;
+}
+
+int as_dsp_busydetect(as_tone_detector *dsp)
+{
+	int res = 0, x;
+	int avgsilence = 0, hitsilence = 0;
+	int avgtone = 0, hittone = 0;
+
+	if (!dsp->busymaybe)
+		return res;
+
+	for (x=DSP_HISTORY - dsp->busycount;x<DSP_HISTORY;x++) 
+	{
+		avgsilence += dsp->historicsilence[x];
+		avgtone += dsp->historicnoise[x];
+	}
+	avgsilence /= dsp->busycount;
+	avgtone /= dsp->busycount;
+
+	for (x=DSP_HISTORY - dsp->busycount;x<DSP_HISTORY;x++) 
+	{
+		if (avgsilence > dsp->historicsilence[x]) 
+		{
+			if (avgsilence - (avgsilence / BUSY_PERCENT) <= dsp->historicsilence[x])
+				hitsilence++;
+		} 
+		else 
+		{
+			if (avgsilence + (avgsilence / BUSY_PERCENT) >= dsp->historicsilence[x])
+				hitsilence++;
+		}
+
+		if (avgtone > dsp->historicnoise[x]) 
+		{
+			if (avgtone - (avgtone / BUSY_PERCENT) <= dsp->historicsilence[x])
+				hittone++;
+		}
+		else 
+		{
+			if (avgtone + (avgtone / BUSY_PERCENT) >= dsp->historicsilence[x])
+				hittone++;
+		}
+	}
+
+	if ((hittone >= dsp->busycount - 1) && (hitsilence >= dsp->busycount - 1) 
+		&& (avgtone >= BUSY_MIN && avgtone <= BUSY_MAX) 
+		&& (avgsilence >= BUSY_MIN && avgsilence <= BUSY_MAX) ) 
+	{
+//	if ((hittone >= dsp->busycount - 1) && (avgtone >= BUSY_MIN && avgtone <= BUSY_MAX)) {
+
+		if (avgtone > avgsilence) 
+		{
+			if (avgtone - avgtone/(BUSY_PERCENT*2) <= avgsilence)
+				res = 1;
+		} 
+		else 
+		{
+			if (avgtone + avgtone/(BUSY_PERCENT*2) >= avgsilence)
+				res = 1;
+		}
+//		res = 1;
+	}
+
+	if (res)
+		as_error_msg( "detected busy, avgtone: %d, avgsilence %d\n", avgtone, avgsilence);
+	return res;
+}
+
+struct ast_frame *as_dsp_process(struct ast_channel *chan, as_tone_detector *dsp, struct ast_frame *af)
+{
+	int silence;
+	int res;
+	int digit;
+	int x;
+	unsigned short *shortdata;
+	unsigned char *odata;
+	int len;
+	int writeback = 0;
+
+
+	odata = af->data;
+	len = af->datalen;
+	/* Make sure we have short data */
+	switch(af->subclass) 
+	{
+		shortdata = alloca(af->datalen * 2);
+		if (!shortdata) {
+			return af;
+		}
+		for (x=0;x<len;x++) 
+			shortdata[x] = MULAW(odata[x]);
+		break;
+	case AST_FORMAT_ALAW:
+		shortdata = alloca(af->datalen * 2);
+		if (!shortdata) 
+		{
+			as_error_msg( "Unable to allocate stack space for data: %s\n", strerror(errno));
+			return af;
+		}
+		for (x=0;x<len;x++) 
+			shortdata[x] = AST_ALAW(odata[x]);
+		break;
+	}
+
+	
+	silence = __as_dsp_silence(dsp, shortdata, len, NULL);
+	if ((dsp->features & DSP_FEATURE_SILENCE_SUPPRESS) && silence) 
+	{
+		memset(&dsp->f, 0, sizeof(dsp->f));
+		dsp->f.frametype = AST_FRAME_NULL;
+		return &dsp->f;
+	}
+	
+	if ((dsp->features & DSP_FEATURE_BUSY_DETECT) && as_dsp_busydetect(dsp)) 
+	{
+		chan->_softhangup |= AST_SOFTHANGUP_DEV;
+		memset(&dsp->f, 0, sizeof(dsp->f));
+		dsp->f.frametype = AST_FRAME_CONTROL;
+		dsp->f.subclass = AST_CONTROL_BUSY;
+		ast_log(LOG_DEBUG, "Requesting Hangup because the busy tone was detected on channel %s\n", chan->name);
+		return &dsp->f;
+	}
+
+		
+	if ((dsp->features & DSP_FEATURE_CALL_PROGRESS)) 
+	{
+		res = __as_dsp_call_progress(dsp, shortdata, len);
+		memset(&dsp->f, 0, sizeof(dsp->f));
+		dsp->f.frametype = AST_FRAME_CONTROL;
+		if (res) 
+		{
+			switch(res) 
+			{
+			case AST_CONTROL_ANSWER:
+			case AST_CONTROL_BUSY:
+			case AST_CONTROL_RINGING:
+			case AST_CONTROL_CONGESTION:
+				dsp->f.subclass = res;
+				if (chan) 
+					ast_queue_frame(chan, &dsp->f);
+				break;
+			default:
+				as_error_msg( "Don't know how to represent call progress message %d\n", res);
+			}
+		}
+	}
+	FIX_INF(af);
+	return af;
+}
+
+static void as_dsp_prog_reset(as_tone_detector *dsp)
+{
+	int max = 0;
+	int x;
+	dsp->gsamp_size = modes[dsp->progmode].size;
+	dsp->gsamps = 0;
+
+	for (x=0;x<sizeof(modes[dsp->progmode].freqs) / sizeof(modes[dsp->progmode].freqs[0]);x++) 
+	{
+		if (modes[dsp->progmode].freqs[x]) 
+		{
+			__goertzel_init(&dsp->freqs[x], (float)modes[dsp->progmode].freqs[x], dsp->gsamp_size);
+			max = x;
+		}
+	}
+	dsp->freqcount = max;
+}
+
+as_tone_detector *as_dsp_new(void)
+{
+	as_tone_detector *dsp;
+	dsp = malloc(sizeof(as_tone_detector));
+	if (dsp) 
+	{
+		memset(dsp, 0, sizeof(as_tone_detector));
+		dsp->threshold = DEFAULT_THRESHOLD;
+		dsp->features = DSP_FEATURE_SILENCE_SUPPRESS;
+		dsp->busycount = DSP_HISTORY;
+		/* Initialize initial DSP progress detect parameters */
+		as_dsp_prog_reset(dsp);
+	}
+	return dsp;
+}
+
+void as_dsp_set_features(as_tone_detector *dsp, int features)
+{
+	dsp->features = features;
+}
+
+void as_dsp_free(as_tone_detector *dsp)
+{
+	free(dsp);
+}
+
+void as_dsp_set_threshold(as_tone_detector *dsp, int threshold)
+{
+	dsp->threshold = threshold;
+}
+
+void as_dsp_set_busy_count(as_tone_detector *dsp, int cadences)
+{
+	if (cadences < 4)
+		cadences = 4;
+	if (cadences > DSP_HISTORY)
+		cadences = DSP_HISTORY;
+	dsp->busycount = cadences;
+}
+
+void as_dsp_reset(as_tone_detector *dsp)
+{
+	int x;
+	dsp->totalsilence = 0;
+	dsp->gsamps = 0;
+	for (x=0;x<4;x++)
+		dsp->freqs[x].v2 = dsp->freqs[x].v3 = 0.0;
+	memset(dsp->historicsilence, 0, sizeof(dsp->historicsilence));
+	memset(dsp->historicnoise, 0, sizeof(dsp->historicnoise));
+	
+}
+
+int as_dsp_set_call_progress_zone(as_tone_detector *dsp, char *zone)
+{
+	int x;
+	for (x=0;x<sizeof(aliases) / sizeof(aliases[0]);x++) 
+	{
+		if (!strcasecmp(aliases[x].name, zone)) 
+		{
+			dsp->progmode = aliases[x].mode;
+			as_dsp_prog_reset(dsp);
+			return 0;
+		}
+	}
+	return -1;
+}
+

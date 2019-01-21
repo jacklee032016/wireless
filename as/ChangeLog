@@ -1,0 +1,31 @@
+
+# $Log: ChangeLog,v $
+# Revision 1.1.1.1  2006/11/29 08:55:01  lizhijie
+# AS600 Kernel
+#
+# Revision 1.2  2005/07/18 06:27:58  lizhijie
+# add NPE crypto support
+#
+# Revision 1.1  2005/07/11 09:32:24  lizhijie
+# tune modules ixp422 support
+# 
+# $Id: ChangeLog,v 1.1.1.1 2006/11/29 08:55:01 lizhijie Exp $ 
+	ChangeLog for kernel integrated with Intel AccessLibrary 2.0
+
+2005.07.18
+	重新定义编译NPE的选项
+
+2005.07.14
+	增加NPE及其加密库的支持
+
+2005.07.11
+	删除CVS上的生成微码映像的二进制可执行文件，使每次编译时，重新编译
+	
+	定制IXP422主板的需要编译的模块，只包含：
+		qmgr、		npeDl、	npeMh、		ethAcc、		ethDB、	ethMii、
+		featureCtrl、ossl、	osServices、perfProfAcc、	dmaAcc、oslinux
+		共12个模块
+	
+	将NPE的微码静态地连接到ixp400.0中
+		在Linux-2.4.x的Makefile中增加IX_INCLUDE_MICROCODE这个环境变量的定义
+

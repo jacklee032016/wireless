@@ -1,0 +1,37 @@
+#
+# $Revision: 1.1.1.1 $
+# $Author: lizhijie $
+# $Log: ChangeLog,v $
+# Revision 1.1.1.1  2006/11/29 09:16:54  lizhijie
+# AS600 Drivers
+#
+# Revision 1.1.1.1  2006/07/13 04:21:31  lizhijie
+# rebuild
+#
+# Revision 1.1  2005/06/27 05:59:01  lizhijie
+# no message
+#
+#
+	ChangeLog for PCM Driver
+			Li Zhijie, 2005.05.22
+			
+ChangeLog for drivers/pcm
+
+2005.05.24
+	去掉所有多余的功能，精简、优化代码，解决死机问题
+
+2005.06.17
+	在 MakeFile 中增加 make install 指令时将BIN文件拷贝至目录 /drivers/bin
+	
+2005.05.22
+	增加ZarLink芯片及其驱动的调用逻辑：条件编译
+	修改文件列表：
+		Makefile.include
+		driver/span/file/as_dev_file_open.c
+		
+	（在宁波，完成）
+
+2005.03.04
+	于宁波,重新编写、缩小全部程序					
+					
+			

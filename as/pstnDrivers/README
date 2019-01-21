@@ -1,0 +1,35 @@
+		Driver header for User Agent in VOCAL 1.5.0
+				Li Zhijie 2005.02.04
+
+2005.07.07
+编译驱动程序的要求
+	驱动分为以下几个模块，各个模块需要单独编译、打包并发布
+1、slic	：
+	SLIC设备的驱动，可用于IXP42X和PC机
+	进入slic的命令，执行“make ARCH=arm|；make ARCH=arm| install”
+	就可以发布建立IXP42X和PC上的发布包
+2、pcm	：
+	PCM驱动，基本只用于IXP42X
+	进入pcm的命令，执行“make ARCH=arm|；make ARCH=arm| install”
+	就可以发布建立IXP42X和PC上的发布包
+3、zarlink ：
+	回声取消芯片的驱动，只用于IXP42X
+	进入zarlink/src命令，直接“make;make install”就可以建立IXP42X的安装包
+4、misc	：
+	蜂鸣器和看门狗的驱动，只用于IXP42X
+	进入misc/src命令，直接“make;make install”就可以建立IXP42X的安装包
+		
+		
+请将驱动程序的两个模块checkout到这个目录下，然后开始编译
+
+
+编译的要求
+	PC机的要求
+		/usr/src/linux-2.4，这个目录是kernel源码所在的目录，或指向源码的符号连接
+		kernel的源码就使用现在使用的2.4.24的kernel
+
+	IXP422的要求
+		/cygdrive/d/ixp_works/linux-2.4.x，这个目录是IXP422的kernel源码所在的目录
+编译方法：
+	在drivers/目录下分别[make][make ARCH=arm]生成所有BIN文件
+	然后执行[make install]，drivers/bin目录生成，里面包括所有需要的驱动程序

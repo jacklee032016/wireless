@@ -1,0 +1,314 @@
+. scripts/mkversion > .tmpversion
+arm-linux-gcc -mbig-endian -D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm  -DUTS_MACHINE='"arm"' -DKBUILD_BASENAME=version -c -o init/version.o init/version.c
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/tools'
+cmp constants.h /cygdrive/d/works/linux-2.4.x/include/asm-arm/constants.h >/dev/null 2>&1 || cp -p constants.h /cygdrive/d/works/linux-2.4.x/include/asm-arm/constants.h
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/tools'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  kernel
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/kernel'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/kernel'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/kernel'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/kernel'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  drivers
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers'
+make -C block
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/block'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/block'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/block'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/block'
+make -C cdrom
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/cdrom'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/cdrom'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/cdrom'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/cdrom'
+make -C char
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/char'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/char'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/char'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/char'
+make -C hotplug
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/hotplug'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/hotplug'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/hotplug'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/hotplug'
+make -C media
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/media'
+make -C radio
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/media/radio'
+make all_targets
+make[4]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/media/radio'
+make[4]: Nothing to be done for `all_targets'.
+make[4]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/media/radio'
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/media/radio'
+make -C video
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/media/video'
+make all_targets
+make[4]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/media/video'
+make[4]: Nothing to be done for `all_targets'.
+make[4]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/media/video'
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/media/video'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/media'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/media'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/media'
+make -C misc
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/misc'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/misc'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/misc'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/misc'
+make -C net
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/net'
+make -C tulip
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/net/tulip'
+make all_targets
+make[4]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/net/tulip'
+make[4]: Nothing to be done for `all_targets'.
+make[4]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/net/tulip'
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/net/tulip'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/net'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/net'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/net'
+make -C parport
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/parport'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/parport'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/parport'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/parport'
+make -C pci
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/pci'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/pci'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/pci'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/pci'
+make -C sound
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/sound'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers/sound'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/sound'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers/sound'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/drivers'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/drivers'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  mm
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/mm'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/mm'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/mm'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/mm'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  fs
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs'
+make -C devpts
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/devpts'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/devpts'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/devpts'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/devpts'
+make -C ext2
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/ext2'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/ext2'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/ext2'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/ext2'
+make -C lockd
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/lockd'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/lockd'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/lockd'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/lockd'
+make -C nfs
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/nfs'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/nfs'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/nfs'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/nfs'
+make -C partitions
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/partitions'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/partitions'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/partitions'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/partitions'
+make -C proc
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/proc'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/proc'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/proc'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/proc'
+make -C ramfs
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/ramfs'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/ramfs'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/ramfs'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/ramfs'
+make -C romfs
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/romfs'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs/romfs'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/romfs'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs/romfs'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/fs'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/fs'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  net
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/net'
+make -C 802
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/802'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/802'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/802'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/802'
+make -C core
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/core'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/core'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/core'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/core'
+make -C ethernet
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/ethernet'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/ethernet'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/ethernet'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/ethernet'
+make -C ipv4
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/ipv4'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/ipv4'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/ipv4'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/ipv4'
+make -C netlink
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/netlink'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/netlink'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/netlink'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/netlink'
+make -C sched
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/sched'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/sched'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/sched'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/sched'
+make -C sunrpc
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/sunrpc'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/sunrpc'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/sunrpc'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/sunrpc'
+make -C unix
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/unix'
+make all_targets
+make[3]: Entering directory `/cygdrive/d/works/linux-2.4.x/net/unix'
+make[3]: Nothing to be done for `all_targets'.
+make[3]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/unix'
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net/unix'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/net'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/net'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  ipc
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/ipc'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/ipc'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/ipc'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/ipc'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  lib
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/lib'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/lib'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/lib'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/lib'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  crypto
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/crypto'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/crypto'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/crypto'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/crypto'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  arch/arm/mach-ixp425
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mach-ixp425'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mach-ixp425'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mach-ixp425'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mach-ixp425'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  arch/arm/kernel
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/kernel'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/kernel'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  arch/arm/mm
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mm'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mm'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mm'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/mm'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  arch/arm/lib
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/lib'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/lib'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/lib'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/lib'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  arch/arm/nwfpe
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/nwfpe'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/nwfpe'
+arm-linux-ld -EB -r -o nwfpe.o fpa11.o fpa11_cpdo.o fpa11_cpdt.o fpa11_cprt.o fpmodule.o fpopcode.o softfloat.o single_cpdo.o double_cpdo.o entry.o
+rm -f math-emu.o
+arm-linux-ld -EB   -r -o math-emu.o nwfpe.o
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/nwfpe'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/nwfpe'
+make CFLAGS="-D__KERNEL__ -I/cygdrive/d/works/linux-2.4.x/include  -Wall -Wstrict-prototypes -Wno-trigraphs -Os -fno-strict-aliasing -fno-common -Uarm -fno-common -pipe -mapcs-32 -D__LINUX_ARM_ARCH__=5 -mcpu=xscale -mtune=xscale -mshort-load-bytes -msoft-float -Uarm " -C  arch/arm/fastfpe
+make[1]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/fastfpe'
+make all_targets
+make[2]: Entering directory `/cygdrive/d/works/linux-2.4.x/arch/arm/fastfpe'
+make[2]: Nothing to be done for `all_targets'.
+make[2]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/fastfpe'
+make[1]: Leaving directory `/cygdrive/d/works/linux-2.4.x/arch/arm/fastfpe'
+arm-linux-ld -EB -p -X -T arch/arm/vmlinux.lds arch/arm/kernel/head-armv.o arch/arm/kernel/init_task.o init/main.o init/version.o init/do_mounts.o \
+	--start-group \
+	arch/arm/kernel/kernel.o arch/arm/mm/mm.o arch/arm/mach-ixp425/ixp425.o kernel/kernel.o mm/mm.o fs/fs.o ipc/ipc.o \
+	 drivers/char/char.o drivers/block/block.o drivers/misc/misc.o drivers/net/net.o drivers/pci/driver.o drivers/media/media.o \
+	net/network.o \
+	arch/arm/nwfpe/math-emu.o arch/arm/lib/lib.a /cygdrive/d/works/linux-2.4.x/lib/lib.a \
+	--end-group \
+	-o vmlinux
+arm-linux-nm vmlinux | grep -v '\(compiled\)\|\(\.o$\)\|\( [aUw] \)\|\(\.\.ng$\)\|\(LASH[RL]DI\)' | sort > System.map

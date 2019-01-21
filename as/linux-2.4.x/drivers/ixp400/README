@@ -1,0 +1,33 @@
+# $Log: README,v $
+# Revision 1.1.1.1  2006/11/29 08:55:23  lizhijie
+# AS600 Kernel
+#
+# Revision 1.1  2005/07/12 05:23:53  lizhijie
+# add this file into CVS repository
+#
+# $Id: README,v 1.1.1.1 2006/11/29 08:55:23 lizhijie Exp $
+
+			README for drivers/ixp400 
+					李志杰 2005.07.11
+
+2005.07.11
+组件模块的定义
+	需要编译生成的模块组件和codelet组件是由ixp400_xscale_sw/Makefile中的
+	宏BI_ENDIAN_COMPONENTS和宏BI_ENDIAN_CODELETS_COMPONENTS分别定义的。
+	参考修改后的ixp400_xscale_sw/Makefile
+
+静态连接微码程序
+	linux-2.4.x/Makefile中增加IX_INCLUDE_MICROCODE环境变量（定义为1）
+	这时不再需要oslinux组件模块
+
+定制编译微码
+	修改ixp400_xscale_sw/src/include/IxNpeMicrocode.h文件，以定制需要的
+	NPE模块，例如清除多余的NPE A的功能
+
+	
+IXP422主板
+	需要的组件模块为
+	qmgr npeMh npeDl ethAcc ethDB ethMii featureCtrl ossl osServices 
+	dmaAcc和osal共11个组件模块（约508612字节）
+	组件模块perfProfAcc 加入后，会出现错误，需要进一步调试
+			

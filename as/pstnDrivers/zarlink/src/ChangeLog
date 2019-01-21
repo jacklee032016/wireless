@@ -1,0 +1,8 @@
+ChangeLog for drivers/zarlink/src
+
+
+2005.06.17
+	在 MakeFile 中增加 make install 指令时将BIN文件拷贝至目录 /drivers/bin
+	
+2005.06.17
+	增加文件 ChangeLog for drivers/zarlink/src

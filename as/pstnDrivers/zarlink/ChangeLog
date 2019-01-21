@@ -1,0 +1,28 @@
+#
+# $Author: lizhijie $
+# $Log: ChangeLog,v $
+# Revision 1.1.1.1  2006/11/29 09:16:55  lizhijie
+# AS600 Drivers
+#
+# Revision 1.1.1.1  2006/07/13 04:21:32  lizhijie
+# rebuild
+#
+# Revision 1.2  2005/08/05 04:19:50  lizhijie
+# add compatability for 80234/80235 chipset
+#
+# Revision 1.1  2005/05/26 05:09:06  lizhijie
+# add zarlink 5023x driver into CVS
+#
+# $Revision: 1.1.1.1 $
+# $Id: ChangeLog,v 1.1.1.1 2006/11/29 09:16:55 lizhijie Exp $
+#
+	ChangeLog for ZarLink Driver
+			Li Zhijie 05.21.2005
+
+2005.08.05
+	修改驱动，使其只使用4个通道组/八个通道（兼容80234和80235的应用），
+	并Makefile中，可以定义使用芯片的宏：DZARLINK_CHIPSET_50235
+
+2005.05.21
+	build and test all base functions
+			

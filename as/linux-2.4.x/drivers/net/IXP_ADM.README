@@ -1,0 +1,66 @@
+# $Id: IXP_ADM.README,v 1.1.1.1 2006/11/29 08:55:23 lizhijie Exp $
+
+			IXP NPE＋ADM6996 Switch驱动README
+						李志杰  2005.11.24
+
+设备指定
+	最终发布的板子上设备的定义为
+		WAN-0		eth0		LTX972
+		WAN-1		eth1		ADM6996的port 5
+		LAN			eth2		ADM6996的port 1~4
+	
+	需要改动的内容
+		1、重现定义宏
+			RAW_WAN_POSITION			LTX972对应的eth位置
+			ADM_START_POSITION			ADM6996芯片对应的eth位置
+		2、修改dev_eth_probe()函数
+			priv->port_id的指定值
+				
+
+需要解决问题
+	mbuf队列
+		两个net_device设备共享priv_data_t中的mbuf队列的问题(??)
+	
+		释放skb到mbuf队列，从mbuf队列获得新的skb
+	
+	双工监控线程
+		端口（NPE）为up时，启动该进程；down时，终止该进程
+	
+	超时的定时器及定时器任务struct tq_struct
+		先将端口（NPE）disable，然后在enable
+
+	强制实现promisc模式，否则可能NPE会过滤一个MAC地址的包
+	
+
+测试
+一、功能测试
+	1、单个功能测试
+		各个eth独立地配置，并ping
+		并且逐个测试LAN上的各个端口
+		检查发出和收到报文的MAC地址是否正确等
+	
+	2、同时配置三个端口
+		同时对三个端口ping，或者将三个端口分别配置在不同的网段内
+	例如从LAN口的主机，同时通过LAN口ping不在同一个网段上的两个WAN
+	上的两个主机
+		
+	3、交换接口测试
+		按照2的配置，同时在LAN的四个端口上挂接四台主机，同时开始
+		上述测试
+		
+	4、注意检查在正常操作过程中的丢包率和响应时间（RTT）
+		
+
+二、性能测试
+	长时间，例如1~2天的时间，执行上述的功能的测试
+	
+	使用特殊的ping软件，例如fast ping，测试端口的最大响应速度
+
+
+三、异常测试
+	ping不存在的主机地址，测试超时处理、出错处理等
+	在ping的过程中，断开网线
+	在ping的过程中，例如一个接口ping的同时，down下另外的一个接口
+或同一个接口等，这个过程最好要反复测试
+
+	

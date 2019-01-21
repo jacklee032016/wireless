@@ -1,0 +1,31 @@
+#
+# $Log: ChangeLog,v $
+# Revision 1.1.1.1  2006/11/29 08:55:04  lizhijie
+# AS600 Kernel
+#
+# Revision 1.1.1.1  2005/07/08 09:46:00  lizhijie
+# Linux-2.4.24 integrated Intel Access Library 2.0
+#
+# Revision 1.2  2005/06/07 10:27:15  lizhijie
+# remove watchdog suuport from kernel
+#
+# Revision 1.1  2005/05/30 03:25:03  lizhijie
+# no message
+#
+# $Author: lizhijie $
+# $Id: ChangeLog,v 1.1.1.1 2006/11/29 08:55:04 lizhijie Exp $
+# 
+
+		ChangeLog for IXP4XX Kernel
+					Li Zhijie, 2005.05.27
+
+2005.06.07
+	删除Kernel中，对看门狗的支持
+
+2005.05.28
+增加对IXP4XX的看门狗芯片的支持
+	新增文件：arch/arm/mach-ixp425/ixp4xx_watchdog.c
+		看门狗芯片的初始化
+	修改文件：arch/arm/mach-ixp425/ixp425-time.c
+		看门狗初始化函数的调用，时钟中断服务程序中，重新设置看门狗芯片的计数值
+		

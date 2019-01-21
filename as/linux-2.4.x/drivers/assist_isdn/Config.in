@@ -1,0 +1,98 @@
+# $Id: Config.in,v 1.1.1.1 2006/11/29 08:55:13 lizhijie Exp $
+# ISDN device configuration
+#
+
+# only included if CONFIG_ASSIST_ISDN != n
+
+define_bool CONFIG_ASSIST_ISDN_BOOL y
+
+#######################################################################
+# CAPI subsystem
+mainmenu_option next_comment
+comment 'Common ISDN API Subsystem'
+	tristate           'CAPI2.0 support' CONFIG_ASSIST_ISDN_CAPI
+	if [ "$CONFIG_ASSIST_ISDN_CAPI" != "n" ]; then
+		bool            '  Verbose reason code reporting (kernel size +=7K)' CONFIG_ASSIST_ISDN_DRV_AVMB1_VERBOSE_REASON
+		dep_bool        '  CAPI2.0 Middleware support (EXPERIMENTAL)' CONFIG_ASSIST_ISDN_CAPI_MIDDLEWARE $CONFIG_EXPERIMENTAL
+		dep_tristate    '  CAPI2.0 /dev/capi support' CONFIG_ASSIST_ISDN_CAPI_CAPI20 $CONFIG_ASSIST_ISDN_CAPI
+		if [ "$CONFIG_ASSIST_ISDN_CAPI_MIDDLEWARE" = "y" ]; then
+			dep_mbool    '    CAPI2.0 filesystem support' CONFIG_ASSIST_ISDN_CAPI_CAPIFS_BOOL $CONFIG_ASSIST_ISDN_CAPI_CAPI20
+			if [ "$CONFIG_ASSIST_ISDN_CAPI_CAPIFS_BOOL" = "y" ]; then
+				define_tristate CONFIG_ASSIST_ISDN_CAPI_CAPIFS $CONFIG_ASSIST_ISDN_CAPI_CAPI20
+			else
+				define_tristate CONFIG_ASSIST_ISDN_CAPI_CAPIFS n
+			fi
+		fi
+		dep_tristate    '  CAPI2.0 capidrv interface support' CONFIG_ASSIST_ISDN_CAPI_CAPIDRV $CONFIG_ASSIST_ISDN_CAPI $CONFIG_ASSIST_ISDN
+	fi
+endmenu
+
+
+########################################################################
+mainmenu_option next_comment
+comment 'Assist ISDN Protocol/HW driver'
+tristate '  Assist ISDN support' CONFIG_ASSIST_MISDN_DRV 
+
+if [ "$CONFIG_MISDN_DRV" != "n" ]; then
+
+#	comment ' Assist ISDN core module'
+	dep_tristate 	' Assist ISDN Core modules' CONFIG_ASSIST_MISDN_CORE $CONFIG_ASSIST_MISDN_DRV 
+
+	
+	dep_tristate 	'  ISDN supported features' CONFIG_ASSIST_MISDN_FEATURES $CONFIG_ASSIST_MISDN_CORE 
+	if [ "$CONFIG_ASSIST_MISDN_FEATURES" != "n" ]; then
+		dep_tristate 	'  ISDN memory leak debug' CONFIG_ASSIST_MISDN_MEMDEBUG $CONFIG_ASSIST_MISDN_FEATURES 
+		dep_tristate 	'  ISDN DSP module' CONFIG_ASSIST_MISDN_DSP $CONFIG_ASSIST_MISDN_FEATURES 
+		if [ "$CONFIG_ASSIST_MISDN_DSP" != "n" ]; then
+			dep_tristate 	' Assist DTMF modules' CONFIG_ASSIST_MISDN_DSP_DTMF  $CONFIG_ASSIST_MISDN_DSP 
+			dep_tristate 	' Assist audio DSP modules' CONFIG_ASSIST_MISDN_DSP_AUDIO  $CONFIG_ASSIST_MISDN_DSP 
+		fi
+	fi
+		
+		comment ' Assist ISDN CAPI module'
+		dep_tristate 	' Assist ISDN CAPI modules' CONFIG_ASSIST_MISDN_CAPI $CONFIG_ASSIST_MISDN_DRV  $CONFIG_ASSIST_ISDN_CAPI
+
+	dep_tristate 	'  Assist ISDN Protocols modules' CONFIG_ASSIST_MISDN_PROTOCOLS $CONFIG_ASSIST_MISDN_DRV 
+	if [ "$CONFIG_ASSIST_MISDN_PROTOCOLS" != "n" ]; then
+#		comment ' Assist ISDN Protocols modules'
+		dep_tristate 	' Assist Layer-1 module' CONFIG_ASSIST_MISDN_L1 $CONFIG_ASSIST_MISDN_PROTOCOLS
+		dep_tristate 	' Assist Layer-2 module' CONFIG_ASSIST_MISDN_L2 $CONFIG_ASSIST_MISDN_PROTOCOLS
+		dep_tristate 	' Assist Layer-3(UDSS1) module' CONFIG_ASSIST_MISDN_L3UDSS1 $CONFIG_ASSIST_MISDN_PROTOCOLS
+		dep_tristate 	' Assist Layer-3(UserINS) module' CONFIG_ASSIST_MISDN_L3UINS $CONFIG_ASSIST_MISDN_PROTOCOLS
+		dep_tristate 	' Assist X25 module' CONFIG_ASSIST_MISDN_X25 $CONFIG_ASSIST_MISDN_PROTOCOLS
+	fi
+	
+	dep_tristate 	'  ISDN devices supportted' CONFIG_ASSIST_MISDN_DEVICES $CONFIG_ASSIST_MISDN_DRV 
+	if [ "$CONFIG_ASSIST_MISDN_DEVICES" != "n" ]; then
+#		comment '  ISDN devices supportted'
+		dep_tristate 	'   4 S/T miniPCI card(Assist OEM)' CONFIG_ASSIST_MISDN_PCI_CARD $CONFIG_ASSIST_MISDN_DEVICES
+		dep_tristate 	'  Cologne Chip Design HFC multiport cards' CONFIG_ASSIST_MISDN_HFCMULTI $CONFIG_ASSIST_MISDN_DEVICES
+#	dep_tristate 	'  AVM Fritz PCI and ISA PnP cards' CONFIG_ASSIST_MISDN_AVM_FRITZ $CONFIG_ASSIST_MISDN_DEVICES
+#	dep_tristate 	'  Cologne Chip Design HFC PCI cards' CONFIG_ASSIST_MISDN_HFCPCI $CONFIG_ASSIST_MISDN_DEVICES
+#	dep_tristate 	'  Sedlbauer Speedfax + cards' CONFIG_ASSIST_MISDN_SPEEDFAX $CONFIG_ASSIST_MISDN_CORE
+#	dep_tristate 	'  Winbond W6692 cards' CONFIG_ASSIST_MISDN_W6692 $CONFIG_ASSIST_MISDN_CORE
+	fi
+
+	dep_tristate 	'  ISDN not-matured(miscellious) features' CONFIG_ASSIST_MISDN_MISC $CONFIG_ASSIST_MISDN_DRV 
+	if [ "$CONFIG_ASSIST_MISDN_MISC" != "n" ]; then
+#		comment '  ISDN not-matured(miscellious) features'
+		dep_tristate 	'  ISDN4Linux CAPI Layer' CONFIG_ASSIST_I4L_CAPI_LAYER $CONFIG_ASSIST_MISDN_MISC
+		dep_tristate 	'  Layer 3 Fax' CONFIG_ASSIST_MISDN_L3_FAX $CONFIG_ASSIST_MISDN_MISC
+
+	fi
+fi
+
+endmenu
+#	comment ' Assist ISDN Layer-1 module'
+#	tristate 	' Assist Layer-1 modules' CONFIG_ASSIST_MISDN_L1
+#	define_bool CONFIG_ASSIST_MISDN_L1 y
+#	comment ' Assist ISDN Layer-2 module'
+#	tristate 	' Assist Layer-2 modules' CONFIG_ASSIST_MISDN_L2
+#	define_bool CONFIG_ASSIST_MISDN_L2 y
+#	comment ' Assist ISDN Layer-3(UDSS1) module'
+#	tristate 	' Assist Layer-3(UDSS1) modules' CONFIG_ASSIST_MISDN_L3UDSS1
+#	define_bool CONFIG_ASSIST_MISDN_L3UDSS1 y
+#	comment ' Assist ISDN X25 module'
+#	tristate 	' Assist X25 modules' CONFIG_ASSIST_MISDN_X25
+#	define_bool CONFIG_ASSIST_MISDN_X25 y
+

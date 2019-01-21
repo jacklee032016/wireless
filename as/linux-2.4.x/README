@@ -1,0 +1,38 @@
+# $Author: lizhijie $
+# $Log: README,v $
+# Revision 1.1.1.1  2006/11/29 08:55:04  lizhijie
+# AS600 Kernel
+#
+# Revision 1.2  2006/11/08 05:17:32  lizhijie
+# no message
+#
+# Revision 1.1.1.1  2005/07/08 09:46:00  lizhijie
+# Linux-2.4.24 integrated Intel Access Library 2.0
+#
+# Revision 1.4  2005/07/06 06:54:34  lizhijie
+# remove
+#
+#
+# $Revision: 1.1.1.1 $
+
+	Our Linux kernel 2.4.24 for IXP422 Board
+
+2005.07.06
+	增加对ppp的支持选项
+	增加桥功能、MAC地址过滤（ebtables）
+	增加IPv6在IPv4上的tunning传输功能
+
+2005.07.04
+	增加ext3的支持
+	
+
+
+	download it from CVS and build symbol link for include/asm-arm, 
+include/asm/arch-ixp425, include/asm/proc-armv ,then build the target.
+
+For kernel image, 'make' and 'mkbin.sh' command must execute sequencely.
+
+For Kernel modules, 'make modules' command issued.
+
+For NPE, the 'make modules' command can be issued in vendor/Intel/..
+directory.

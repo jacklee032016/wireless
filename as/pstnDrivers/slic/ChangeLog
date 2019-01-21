@@ -1,0 +1,10 @@
+ChangeLog for drivers/slic
+
+2005.07.07
+	将SLIC的设备号从1开始计数更改为从0开始计数，适应PBX的标准规范
+
+2005.06.17
+	在 MakeFile 中增加 make install 指令时将BIN文件拷贝至目录 /drivers/bin
+	
+2005.06.17
+	增加文件 ChangeLog for drivers/slic

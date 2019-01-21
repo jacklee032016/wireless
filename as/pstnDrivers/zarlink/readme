@@ -1,0 +1,104 @@
+#
+# $Author: lizhijie $
+# $Log: readme,v $
+# Revision 1.1.1.1  2006/11/29 09:16:55  lizhijie
+# AS600 Drivers
+#
+# Revision 1.1.1.1  2006/07/13 04:21:32  lizhijie
+# rebuild
+#
+# Revision 1.1  2005/05/26 05:09:06  lizhijie
+# add zarlink 5023x driver into CVS
+#
+# $Revision: 1.1.1.1 $
+# $Id: readme,v 1.1.1.1 2006/11/29 09:16:55 lizhijie Exp $
+#
+		ZarLink回声取消芯片的驱动
+				李志杰  2005.05.21
+
+支持Zarlink 50233/50234/50235等系列回声取消芯片
+
+一、驱动程序的使用
+1. 必须在包含ZarLink的板子上使用，所以只需要在arm环境下编译
+	进入src目录
+	修改Makefile中的IXP_KERNEL_HOME变量，使指向IXP的核心源码所在的目录
+		（如果按照标准建立的目录，则不必作任何修改）
+	直接执行make就生成IXP422的驱动
+	
+		
+2. 编译生成的核心模块
+	核心模块在src上一级目录的bin目录下，名字为zl.o
+	
+3. 加载模块时，会检查是否包含ZarLink硬件
+	
+4. 模块加载成功后，会建立/proc/zlec文件（ZarLink Echo Canceller），
+	可以使用cat命令查看硬件的状态和各个回声取消通道的配置
+		
+	注意：每次cat命令只能列出其中一半的回声取消通道；再次cat，
+	则列出另外的一半
+		
+5. 在支持ZarLink的板子上，必须首先加载zl.o，才能加载Tiger的驱动
+
+
+编译支持ZarLink的Tiger的驱动程序时，需要在Makefile.include文件中修改
+	    
+
+二、寄存器值和回声取消方案的设定
+1. 主控寄存器
+	Main Control Register 0 : 0X7D		
+		ODE/屏蔽中断/G.711 PCM格式/u律/PowerUp模式
+	Main Control Register 1~7 : 0X1D
+		屏蔽中断/G.711 PCM格式/u律/PowerUp模式
+		
+2. 回声取消通道控制寄存器（只列出主要使用的寄存器）
+	Control Register 0 ：0
+		增加舒适噪声/不允许背靠背模式/不使用12dB衰减（使用增益寄存器来控制）/
+		不使用byPass/使用自适应的系数调整/不使用扩展模式（128毫秒的回声取消）
+		注：通道1、3、5、7的Control Register 1的初值可以为0X02。
+	Control Register 1 ：0
+		使用Tone Detect/使用2100Hz的Tone检测/使用NLP/不管2100Hz Tone检测的结果
+		回声取消继续使用/使用窄带信号检测/使用高通滤波/发生端不使用静音/接收端
+		不使用静音
+	Control Register 2 ：0XFB
+	Control Register 3 ：0X54
+
+3. 回声取消通道得到其余寄存器（均使用默认值）
+1). LMS算法优化寄存器        
+        Flat Delay Register : 0   
+        Decay Step Number Register : 0             
+        Decay Step Size Register : 4
+2). 噪声寄存器        
+        Noise Scaling Register : 0X16            
+        Noise Control Register : 0X45
+3). 峰值寄存器        
+        Rin Peak Register : 0X0   
+        Sin Peak Register : 0X0
+        Error Peak Register : 0X0
+4). 其余        
+        Double-Talk Detect Threshold Register : 0X4800   
+        Non Linear Processor Threshold Register : 0Xce0   
+        算法MU参数 Register : 0X4000
+        Gains Register : 0X4444
+
+
+三、测试
+1. 单元测试
+1). 查看/proc/zlec文件的内容，检查是否与此处列出的一致			
+
+2). ByPass时，Channel Control Register 1 ：0x08
+	
+3). 加载zl.o的驱动，检查回声取消的效果
+
+4). 加载支持zl_by.o的驱动，检查ByPass时，回声取消芯片的效果	
+	
+	
+2. 综合测试
+加载ZarLink的驱动后，使用支持ZarLink的PCM驱动（参考PCM驱动的readme.txt）
+1). 通话开始时，检查：
+		Channel Control Register 1 ：0x00
+		注：通道1、3、5、7的Control Register 1的初值可以为0X02。
+		
+2). 通话结束后，检查：
+		Channel Control Register 1 ：0x08
+		注：通道1、3、5、7的Control Register 1的初值可以为0X0A。
+		

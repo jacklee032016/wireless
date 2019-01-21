@@ -1,0 +1,14 @@
+		README for mISDN
+				Li Zhijie, 2005.07.30
+				
+
+2005.08.02
+	修改isdn/Config.in和isdn/hardware/misdn/Makefile、isdn/hardware/misdn/Rules.mISDN
+	以增加mISDN_faxl3.o 和I4LmISDN.o两个模块的编译开关，后一个模块无法编译成功
+	
+	修改这几个文件，建立assist_hfc_multi.c模块的编译环境
+
+2005.07.30
+	注释掉memdbg.c中的WARN_ON宏所在的语句
+	
+				

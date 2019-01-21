@@ -1,0 +1,68 @@
+# IP Phone prototype
+# created by Li zhijie 2004.08
+
+OBJDIR=$(USER_TOP_DIR)/objects
+
+
+# PC | ARM
+PLATFORM=PC
+
+# it must the same as what defined in dhid.h
+PACKAGE_HOME=#/etc/dhis/client/
+
+
+TIMESTAMP:= $(shell date -u "+%Y.%m.%d")
+
+
+# CFLAGS=-D__USE_GNU -I$(ZAPTEL_HOME)/include -I$(ZAPTEL_HOME)/include/zap 
+# CFLAGS +=-Wall -I. -I$(TOP_DIR)/include -g #-I/usr/src/linux-2.4 
+# CFLAGS +=-I$(ZAPTEL_HOME)/gsmlib
+# CFLAGS +=
+
+LFLAGS= -L. -lastdm -L$(TOP_DIR)/libs  -lpthread
+
+# 
+
+ifeq ($(PLATFORM),PC)
+	CFLAGS 	+= #-mno-cygwin -DDHIS_WINDOWS
+	LFLAGS 	+= #-L. -L/usr/lib/w32api #-L$(MSVC_HOME)/Lib
+	LIBS	+= #-lws2_32 -lgmp
+#.dll
+else
+	CFLAGS += #-DDHIS_LINUX
+	LFLAGS +=-L. 
+	LIBS	+= #-lgmp
+endif
+	LFLAGS 	+= -L$(ZAPTEL_HOME)/libs
+	LIBS	+= -lgsm
+
+
+CC	= gcc
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ifeq ($(SUBDIRS),)
+SUBDIRS := $(patsubst %/,%,$(dir $(wildcard */Makefile)))
+endif
+
+#recurse into every sub directory
+all:$(SUBDIRS) $(objs) $(EXEC)
+
+
+	
+$(SUBDIRS)::
+	$(MAKE) -C $@  CURRENT_DIR=$@ 
+
+
+.c.o :as_call.h
+	$(CC) -g $(CFLAGS) -c $<;
+	$(COPY) $@ $(OBJDIR);
+	
+
+	

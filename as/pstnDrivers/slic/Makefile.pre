@@ -1,0 +1,149 @@
+#
+# $Author: lizhijie $
+# $Log: Makefile.pre,v $
+# Revision 1.1.1.1  2006/11/29 09:16:55  lizhijie
+# AS600 Drivers
+#
+# Revision 1.1.1.1  2006/07/13 04:21:32  lizhijie
+# rebuild
+#
+# Revision 1.8  2006/07/13 03:57:15  lizhijie
+# dd
+#
+# Revision 1.7  2005/07/21 03:31:42  tangr
+# kernel includes put in subdirs instead of topdir
+#
+# Revision 1.6  2005/07/21 01:49:25  tangr
+# fix kernel include path
+#
+# Revision 1.5  2005/07/07 07:38:38  lizhijie
+# add 'make install' for release SLIC package
+#
+# Revision 1.4  2005/07/07 06:49:38  lizhijie
+# a
+#
+# Revision 1.3  2005/04/26 06:06:09  lizhijie
+# *** empty log message ***
+#
+# Revision 1.2  2005/04/20 03:04:20  lizhijie
+# no message
+#
+# Revision 1.1.1.1  2005/03/14 06:56:04  lizhijie
+# new drivers for all devices
+#
+# Revision 1.5  2004/12/14 12:48:50  lizhijie
+# support building header files in the architecture platform
+#
+# Revision 1.4  2004/12/14 08:44:34  lizhijie
+# add ARM channel exchange
+#
+# Revision 1.3  2004/12/11 05:33:50  lizhijie
+# add IXP422 suppport
+#
+# Revision 1.2  2004/11/22 01:45:22  lizhijie
+# convert into DOS format
+#
+# Revision 1.1.1.1  2004/11/18 07:00:04  lizhijie
+# driver for assist telephone cards Tiger320-Si3210/3050
+#
+# $Revision: 1.1.1.1 $
+#
+
+# global option for the driver
+KERNEL=yes
+HARDWARE_DSP=yes
+TIGER_DEBUG=yes
+
+ifeq ($(KERNEL_DIR),)
+	KERNEL_DIR=$(TOP_DIR)/../kernel/linux-2.4.x/include
+endif
+
+ARCH=arm
+ASSIST_SHARED=#true
+RELEASES_DIR=../releases
+
+ifeq ($(ARCH),arm)
+	CC_FLAGS = -mbig-endian -D__ARM__ 
+	CROSS_COMPILER=arm-linux-
+	LDFLAGS+=-L/usr/local/lib -L.
+  	LDFLAGS+= -mbig-endian 
+ 	K_CFLAGS+= -mbig-endian  -D__ARM__   
+#	KINCLUDES=//works/tmp/linux-2.4.x/include
+#	KINCLUDES=/cygdrive/d/ixp_works/linux-2.4.x/include
+	KINCLUDES=$(KERNEL_DIR)
+	RELEASES_DIR=lib/modules/2.4.24-uc0
+	K_LDFLAGS+= -EB 
+ifneq ("","$(ASSIST_SHARED)")
+	LDFLAGS+=  -Wl,-shared #-Wl,-static 
+else
+	LDFLAGS+=  -Wl,-static
+endif
+
+else
+	KINCLUDES=/usr/src/linux-2.4/include
+	RELEASES_DIR=lib/modules/2.4.24
+	ARCH=i686
+endif
+
+ifeq ($(HARDWARE_DSP),yes)
+	MACRO_CFLAGS+=-DAS_PROSLIC_DSP=1
+else
+	MACRO_CFLAGS+=-DAS_PROSLIC_DSP=0 
+endif
+	
+ifeq ($(TIGER_DEBUG),yes)
+	MACRO_CFLAGS+=-DAS_DEBUG_TIGER=1
+else
+	MACRO_CFLAGS+=-DAS_DEBUG_TIGER=0 
+endif
+
+BUILDTIME := $(shell TZ=UTC date -u "+%Y_%m_%d-%H_%M")
+ASSIST_RELEASES_NAME=assist_driver_slic_$(ARCH)_$(BUILDTIME).tar.gz  
+
+CFLAGS+= -Wall -I. -I$(TOP_DIR)/include  $(CC_FLAGS) #-g  -I/usr/local/include
+LFLAGS+= -L/usr/local/lib -L.
+
+BIN_DIR:=$(TOP_DIR)/Linux.bin.$(ARCH)
+OBJ_DIR:=Linux.obj.$(ARCH)
+
+
+CC	= $(CROSS_COMPILER)gcc
+CXX 	= $(CROSS_COMPILER)g++ 
+STRIP	= $(CROSS_COMPILER)strip
+LD	= $(CROSS_COMPILER)ld
+RANLIB 	= $(CROSS_COMPILER)ranlib
+AR 	= $(CROSS_COMPILER)ar
+STRIP 	= $(CROSS_COMPILER)strip
+
+HOSTCC	= gcc
+
+RM	= rm -r -f
+MKDIR	= mkdir -p
+MODE	= 700
+OWNER	= root
+CHOWN	= chown
+CHMOD	= chmod
+COPY	= cp
+MOVE	= mv
+
+ARFLAGS	= crv
+
+
+
+K_CFLAGS+= -DMODULE -D__KERNEL__ -DEXPORT_SYMTAB 
+K_CFLAGS+= -I$(KINCLUDES)
+K_CFLAGS+= -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+K_CFLAGS+= -DMODVERSIONS  -include $(KINCLUDES)/linux/modversions.h  
+K_CFLAGS+= -Wall -I. -Wstrict-prototypes -fomit-frame-pointer $(MACRO_CFLAGS)
+
+K_LDFLAGS+= -r -d
+
+HOST_CFLAGS+=  -O6 -I$(TOP_DIR)/include -I$(TOP_DIR)/include/driver #-nostdinc
+HOST_CFLAGS+= $(INCLUDE_DIR) 
+
+C_CFLAGS+= $(CC_FLAGS) $(HOST_CFLAGS) 
+C_CFLAGS+= #-Wno-deprecated 
+
+CFLAGS+=$(C_CFLAGS)	$(MACRO_CFLAGS)
+
+HOST_LDFLAGS+=-L$(TOP_DIR)/Linux.bin.i686 -lassist

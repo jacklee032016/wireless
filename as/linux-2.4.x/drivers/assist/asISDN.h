@@ -705,6 +705,7 @@ typedef struct _AS_ISDNstack			as_isdn_stack_t;
 typedef struct _AS_ISDNport			as_isdn_port_t;
 typedef struct _AS_ISDNdevice			as_isdn_device_t;
 typedef struct _AS_ISDNif				as_isdn_if_t;
+
 typedef int	(ctrl_func_t)(void *, u_int, void *);
 typedef int	(if_func_t)(struct _AS_ISDNif *, struct sk_buff *);
 typedef int	(lock_func_t)(void *, int);

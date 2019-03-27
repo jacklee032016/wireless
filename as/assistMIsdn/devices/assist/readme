@@ -1,0 +1,23 @@
+# $Id: readme,v 1.1.1.1 2006/11/29 08:55:13 lizhijie Exp $
+#
+		README for Assist Driver for HFC-4S/8S
+		         Li Zhijie 2005.08.10
+
+2005.12.15
+    增加调试信息的条件编译，只要有：
+        WITH_ASHFC_DEBUG_INIT	：初始化过程的调试
+        WITH_ASHFC_DEBUG_CTRL	：控制过程的调试
+        WITH_ASHFC_DEBUG_DATA	：数据交换的调试
+        WITH_ASHFC_DEBUG_STATE	：状态改变的调试
+        
+    使用方法：修改ashfc.h中宏的定义，clean之后，重新编译
+
+2005.08.14
+	add file : 	readme
+				assist_macro.h
+				ashfc_init_utils.c
+				
+Files List:
+
+		         
+		         

@@ -47,5 +47,7 @@ Only spin_lock is used;
 * Thread block itself into wait_queue_head_t;
 * Data access is mutexed;
 
+
+* No signal and control operations are needed for PCM only driver;
    
    
